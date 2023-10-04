@@ -2,8 +2,9 @@ library com.kalo.landing.screens;
 
 import 'dart:async';
 
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-
+import '../../enums/enums.dart';
 import '../assets/icons.dart';
 import '../assets/images.dart';
 import '../theme.dart';

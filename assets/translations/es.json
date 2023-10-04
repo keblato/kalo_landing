@@ -1,0 +1,14 @@
+{
+    "header": {
+        "menu_options": {
+            "services": "Servicios",
+            "enterprise": "Empresas",
+            "our_process": "Nuestro proceso",
+            "community": "Comunidad"
+        },
+        "title": "La tech \nhouse que \nnecesitas",
+        "description": "Optimiza tu área tech y contrata desde un developer \nhasta equipos dedicados full time o por hora.",
+        "contract_now": "Contrata ahora",
+        "be_developer": "Sé un desarrollador"
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "header": {
+        "menu_options": {
+            "services": "Services",
+            "enterprise": "Enterprise",
+            "our_process": "Our Process",
+            "community": "Comunity"
+        },
+        "title": "The tech \nhouse you \nneed",
+        "description": "Optimize your tech area and hire from a developer \nto full-time / hourly dedicated teams.",
+        "contract_now": "Contract now",
+        "be_developer": "Be a developer"
+    }
+}

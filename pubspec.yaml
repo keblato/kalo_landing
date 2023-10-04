@@ -8,6 +8,7 @@ environment:
   sdk: ">=3.1.0 <4.0.0"
 
 dependencies:
+  easy_localization: ^3.0.3
   flutter:
     sdk: flutter
   google_fonts: ^6.0.0
@@ -23,3 +24,4 @@ flutter:
     - assets/logo/
     - assets/images/
     - assets/videos/
+    - assets/translations/
