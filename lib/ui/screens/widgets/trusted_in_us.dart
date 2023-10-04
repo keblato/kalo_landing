@@ -72,7 +72,7 @@ class TrustedInUs extends StatelessWidget {
                   Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                 ),
                 child: Text(
-                  'Han confiado \nen nosotros',
+                  'trusted_in_us'.tr(),
                   textAlign: TextAlign.start,
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 65,

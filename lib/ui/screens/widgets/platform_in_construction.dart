@@ -3,12 +3,6 @@ part of '../screens.dart';
 class PlatformInConstruction extends StatelessWidget {
   const PlatformInConstruction({super.key});
 
-  static const List<(String, String)> socialNetworks = <(String, String)>[
-    (KaloIcons.instagram, '@kalo.co_'),
-    (KaloIcons.linkedin, '@kalo.com.co'),
-    (KaloIcons.tiktok, '@kalo.com.co'),
-  ];
-
   @override
   Widget build(BuildContext context) {
     double lateralPadding = MediaQuery.of(context).size.width * 0.1;
@@ -34,7 +28,7 @@ class PlatformInConstruction extends StatelessWidget {
                   Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                 ),
                 child: Text(
-                  '¡¡Plataforma en \nconstrucción!!',
+                  'platform_in_construction.title'.tr(),
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 42,
                     fontWeight: FontWeight.bold,
@@ -43,19 +37,19 @@ class PlatformInConstruction extends StatelessWidget {
               ),
               const SizedBox(height: 10),
               Text(
-                '''Síguenos en redes para no perderte ninguna \nactualización de la empresa o nuestro equipo''',
+                'platform_in_construction.follow_us'.tr(),
                 style: KaloTheme.textStyle.copyWith(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
                 ),
               ),
               const SizedBox(height: 20),
-              ...socialNetworks.map(
-                ((String, String) e) => Padding(
+              ...SocialNetworksEnum.values.map(
+                (SocialNetworksEnum socialNetwork) => Padding(
                   padding: const EdgeInsets.only(bottom: 17),
                   child: Row(
                     children: <Widget>[
-                      Image.asset(e.$1, width: 22),
+                      Image.asset(socialNetwork.image, width: 22),
                       const SizedBox(width: 8),
                       ShaderMask(
                         blendMode: BlendMode.srcIn,
@@ -67,7 +61,7 @@ class PlatformInConstruction extends StatelessWidget {
                           Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                         ),
                         child: Text(
-                          e.$2,
+                          socialNetwork.title,
                           style: KaloTheme.textStyle.copyWith(
                             fontSize: 18,
                             fontWeight: FontWeight.w500,

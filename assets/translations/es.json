@@ -1,4 +1,9 @@
 {
+    "common": {
+        "yes": "Si",
+        "no": "No",
+        "see_more": "Ver más"
+    },
     "header": {
         "menu_options": {
             "services": "Servicios",
@@ -10,5 +15,119 @@
         "description": "Optimiza tu área tech y contrata desde un developer \nhasta equipos dedicados full time o por hora.",
         "contract_now": "Contrata ahora",
         "be_developer": "Sé un desarrollador"
+    },
+    "popular_services": {
+        "popular_services": "Servicios populares",
+        "you_need_we_made": "¡Tú lo necesitas, nosotros lo hacemos!",
+        "carousel": {
+            "carousel0": {
+                "title": "Sitios",
+                "subtitle": "WEB"
+            },
+            "carousel1": {
+                "title": "Bases de",
+                "subtitle": "DATOS"
+            },
+            "carousel2": {
+                "title": "Software",
+                "subtitle": "A MEDIDA"
+            },
+            "carousel3": {
+                "title": "E-commerce",
+                "subtitle": "PERSONALIZADOS"
+            },
+            "carousel4": {
+                "title": "Aplicaciones",
+                "subtitle": "MÓVILES"
+            },
+            "carousel5": {
+                "title": "Integración",
+                "subtitle": "DE SISTEMAS"
+            },
+            "carousel6": {
+                "title": "Consultorías",
+                "subtitle": "TECNOLÓGICAS"
+            },
+            "carousel7": {
+                "title": "Servicios en",
+                "subtitle": "NUBE"
+            },
+            "carousel8": {
+                "title": "Prototipados",
+                "subtitle": "FRONT-END"
+            },
+            "carousel9": {
+                "title": "Mantenimiento",
+                "subtitle": "DE PÁGINAS"
+            },
+            "carousel10": {
+                "title": "Diseño",
+                "subtitle": "UI/UX"
+            },
+            "carouse11": {
+                "title": "Desarrollo",
+                "subtitle": "DE MVP'S"
+            }
+        }
+    },
+    "dont_worry": {
+        "first_message": {
+            "first": "Los programadores\n",
+            "second": "no me dan garantías"
+        },
+        "second_message": {
+            "first": "Quisiera ",
+            "second": "mejorar los procesos ",
+            "third": "de mi empresa"
+        },
+        "third_message": {
+            "first": "Nunca consigo  ",
+            "second": "el personal que necesito"
+        },
+        "title": "¡No hay por qué preocuparse!",
+        "description": "Nosotros nos encargamos de darte la mejor experiencia con los mejores desarrolladores"
+    },
+    "services": {
+        "build_teams": "Armamos equipos de desarrollo perfectos para ti",
+        "project_manager_keeps_you_informed": "Tu Project manager te mantiene informado",
+        "guarantees_you_deserve": "Te damos las garantías que mereces"
+    },
+    "methodology": {
+        "title": "1, 2, 3 ¡ Listo !",
+        "description": "Nuestro proceso de elaboración de proyectos está \nestructurado de modo en que no te tengas que preocupar",
+        "identify_problem": "Identificamos\nel problema",
+        "build_your_tech_team": "Armamos tu\nequipo tech",
+        "start_the_proyect": "¡¡Inicia el \nproyecto!!"
+    },
+    "developers": {
+        "more_5000": "+5000",
+        "developers_in_our_community": "Desarrolladores en nuestra comunidad"
+    },
+    "trusted_in_us": "Han confiado \nen nosotros",
+    "identify_your_needs": {
+        "not_sure_how_move_forward": "¿No estás seguro de cómo avanzar?",
+        "identify_your_needs": "Identificamos tus \nnecesidades",
+        "we_have_expert_consultants": "Contamos con consultores expertos en la resolución de proyectos que se \nencargarán de guiarte en tu proceso",
+        "book_now": "Agenda tu consultoría ahora",
+        "free": "GRATIS!!"
+    },
+    "platform_in_construction": {
+        "title": "¡¡Plataforma en \nconstrucción!!",
+        "follow_us": "Síguenos en redes para no perderte ninguna \nactualización de la empresa o nuestro equipo"
+    },
+    "footer": {
+        "enterprise": "Empresas",
+        "make_an_appointment": "Agenda una cita",
+        "start_projects": "Empezar proyectos",
+        "contract_developers": "Contrata desarrolladores",
+        "developers": "Desarrolladores",
+        "work_with_us": "Trabaja con nosotros",
+        "company": "Compañía",
+        "about_us": "Sobre nosotros",
+        "community": "Comunidad",
+        "channels": "Canales",
+        "contact": "Contacto",
+        "contact_us": "Contáctanos",
+        "customer_service": "Servicio al cliente"
     }
 }

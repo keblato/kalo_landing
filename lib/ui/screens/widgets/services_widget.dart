@@ -17,9 +17,9 @@ class ServicesWidget extends StatelessWidget {
               SizedBox(
                 height: 500,
                 width: width * 0.6,
-                child: const _ImageInfo(
+                child: _ImageInfo(
                   imgPath: KaloImages.features1,
-                  title: 'Armamos equipos de desarrollo perfectos para ti',
+                  title: 'services.build_teams'.tr(),
                   showSeeMore: true,
                 ),
               ),
@@ -27,21 +27,22 @@ class ServicesWidget extends StatelessWidget {
               SizedBox(
                 height: 500,
                 width: width * 0.4 - 20,
-                child: const Column(
+                child: Column(
                   children: <Widget>[
                     SizedBox(
                       height: 240,
                       child: _ImageInfo(
                         imgPath: KaloImages.features2,
-                        title: 'Tu Project manager te mantiene informado',
+                        title:
+                            'services.project_manager_keeps_you_informed'.tr(),
                       ),
                     ),
-                    SizedBox(height: 20),
+                    const SizedBox(height: 20),
                     SizedBox(
                       height: 240,
                       child: _ImageInfo(
                         imgPath: KaloImages.features3,
-                        title: 'Te damos las garantías que mereces',
+                        title: 'services.guarantees_you_deserve'.tr(),
                       ),
                     ),
                   ],
@@ -99,7 +100,7 @@ class _ImageInfo extends StatelessWidget {
                     if (showSeeMore) ...<Widget>[
                       const SizedBox(height: 5),
                       Text(
-                        'Ver más',
+                        'common.see_more'.tr(),
                         style: KaloTheme.textStyle.copyWith(
                           color: Colors.white,
                           fontSize: 18,
