@@ -1,4 +1,4 @@
-part of '../screens.dart';
+part of com.kalo.landing.views;
 
 class DevelopersWidget extends StatefulWidget {
   const DevelopersWidget({super.key});
