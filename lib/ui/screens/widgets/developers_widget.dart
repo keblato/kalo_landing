@@ -103,7 +103,7 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
                     children: <Widget>[
                       const SizedBox(height: 80),
                       Text(
-                        '+5000',
+                        'developers.more_5000'.tr(),
                         style: KaloTheme.textStyle.copyWith(
                           fontSize: 120,
                           fontWeight: FontWeight.w800,
@@ -114,7 +114,7 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
                         ),
                       ),
                       Text(
-                        'Desarrolladores en nuestra comunidad',
+                        'developers.developers_in_our_community'.tr(),
                         style: KaloTheme.textStyle.copyWith(
                           fontSize: 18,
                           fontWeight: FontWeight.w800,

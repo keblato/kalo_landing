@@ -35,7 +35,7 @@ class _PopularServicesState extends State<PopularServices> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               Text(
-                'Servicios populares',
+                'popular_services.popular_services'.tr(),
                 style: KaloTheme.textStyle.copyWith(
                   fontSize: 27,
                   fontWeight: FontWeight.w700,
@@ -44,7 +44,7 @@ class _PopularServicesState extends State<PopularServices> {
               ),
               const SizedBox(height: 8),
               Text(
-                '¡Tú lo necesitas, nosotros lo hacemos!',
+                'popular_services.you_need_we_made'.tr(),
                 style: KaloTheme.acuminTextStyle.copyWith(
                   fontSize: 18,
                   fontWeight: FontWeight.w100,
@@ -82,14 +82,17 @@ class _PopularServicesState extends State<PopularServices> {
                     scrollDirection: Axis.horizontal,
                     physics: const NeverScrollableScrollPhysics(),
                     controller: scrollController,
-                    itemCount: PopularServicesCard.items.length,
-                    itemBuilder: (BuildContext context, int index) =>
-                        PopularServicesCard(
-                      margin: getCarrouselItemPadding(constraints.maxWidth),
-                      imagePath: PopularServicesCard.items[index].$1,
-                      title: PopularServicesCard.items[index].$2,
-                      subtitle: PopularServicesCard.items[index].$3,
-                    ),
+                    itemCount: PopularServicesCarouselEnum.values.length,
+                    itemBuilder: (BuildContext context, int index) {
+                      PopularServicesCarouselEnum carouselItem =
+                          PopularServicesCarouselEnum.values[index];
+                      return PopularServicesCard(
+                        margin: getCarrouselItemPadding(constraints.maxWidth),
+                        imagePath: carouselItem.image,
+                        title: carouselItem.title.tr(),
+                        subtitle: carouselItem.subtitle.tr(),
+                      );
+                    },
                   ),
                 ),
                 Positioned(
@@ -182,20 +185,4 @@ class PopularServicesCard extends StatelessWidget {
           ),
         ),
       );
-
-  static const List<(String path, String title, String subtitle)> items =
-      <(String, String, String)>[
-    (KaloImages.carrousel0, 'Sitios', 'WEB'),
-    (KaloImages.carrousel1, 'Bases de', 'DATOS'),
-    (KaloImages.carrousel2, 'Software', 'A MEDIDA'),
-    (KaloImages.carrousel3, 'E-commerce', 'PERSONALIZADOS'),
-    (KaloImages.carrousel4, 'Aplicaciones', 'MÓVILES'),
-    (KaloImages.carrousel5, 'Integración', 'DE SISTEMAS'),
-    (KaloImages.carrousel6, 'Consultorías', 'TECNOLÓGICAS'),
-    (KaloImages.carrousel7, 'Servicios en', 'NUBE'),
-    (KaloImages.carrousel8, 'Prototipados', 'FRONT-END'),
-    (KaloImages.carrousel9, 'Mantenimiento', 'DE PÁGINAS'),
-    (KaloImages.carrousel10, 'Diseño', 'UI/UX'),
-    (KaloImages.carrousel11, 'Desarrollo', 'DE MVP\'S'),
-  ];
 }

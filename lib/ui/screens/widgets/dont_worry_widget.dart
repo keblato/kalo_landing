@@ -38,7 +38,7 @@ class DontWorryWidget extends StatelessWidget {
                 text: TextSpan(
                   children: <InlineSpan>[
                     TextSpan(
-                      text: 'Los programadores ',
+                      text: 'dont_worry.first_message.first'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 15,
@@ -46,7 +46,7 @@ class DontWorryWidget extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: 'no me dan garantías',
+                      text: 'dont_worry.first_message.second'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 15,
@@ -69,7 +69,7 @@ class DontWorryWidget extends StatelessWidget {
                 text: TextSpan(
                   children: <InlineSpan>[
                     TextSpan(
-                      text: 'Quisiera ',
+                      text: 'dont_worry.second_message.first'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 18,
@@ -77,7 +77,7 @@ class DontWorryWidget extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: 'mejorar los procesos ',
+                      text: 'dont_worry.second_message.second'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 18,
@@ -85,7 +85,7 @@ class DontWorryWidget extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: 'de mi empresa',
+                      text: 'dont_worry.second_message.third'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 18,
@@ -110,7 +110,7 @@ class DontWorryWidget extends StatelessWidget {
                 text: TextSpan(
                   children: <InlineSpan>[
                     TextSpan(
-                      text: 'Nunca consigo ',
+                      text: 'dont_worry.third_message.first'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 15,
@@ -118,7 +118,7 @@ class DontWorryWidget extends StatelessWidget {
                       ),
                     ),
                     TextSpan(
-                      text: 'el personal que necesito',
+                      text: 'dont_worry.third_message.second'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         color: Colors.white,
                         fontSize: 15,
@@ -138,7 +138,7 @@ class DontWorryWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  '¡No hay por qué preocuparse!',
+                  'dont_worry.title'.tr(),
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 32,
                     fontWeight: FontWeight.bold,
@@ -148,7 +148,7 @@ class DontWorryWidget extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 Text(
-                  '''Nosotros nos encargamos de darte la mejor experiencia con los mejores desarrolladores ''',
+                  'dont_worry.description'.tr(),
                   textAlign: TextAlign.justify,
                   style: KaloTheme.acuminTextStyle.copyWith(
                     fontSize: 18,

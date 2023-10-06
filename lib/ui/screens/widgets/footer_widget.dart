@@ -19,25 +19,34 @@ class FooterWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
             Image.asset(KaloIcons.logoWhite, width: 150),
-            const FooterActions(
-              title: 'Empresas',
+            FooterActions(
+              title: 'footer.enterprise'.tr(),
               items: <String>[
-                'Agenda una cita',
-                'Empezar proyectos',
-                'Contrata desarrolladores',
+                'footer.make_an_appointment'.tr(),
+                'footer.start_projects'.tr(),
+                'footer.contract_developers'.tr(),
               ],
             ),
-            const FooterActions(
-              title: 'Desarrolladores',
-              items: <String>['Trabaja con nosotros'],
+            FooterActions(
+              title: 'footer.developers'.tr(),
+              items: <String>[
+                'footer.work_with_us'.tr(),
+              ],
             ),
-            const FooterActions(
-              title: 'Compañía',
-              items: <String>['Sobre nosotros', 'Comunidad', 'Canales'],
+            FooterActions(
+              title: 'footer.company'.tr(),
+              items: <String>[
+                'footer.about_us'.tr(),
+                'footer.community'.tr(),
+                'footer.channels'.tr(),
+              ],
             ),
-            const FooterActions(
-              title: 'Contacto',
-              items: <String>['Contáctanos', 'Servicio al cliente'],
+            FooterActions(
+              title: 'footer.contact'.tr(),
+              items: <String>[
+                'footer.contact_us'.tr(),
+                'footer.customer_service'.tr(),
+              ],
             ),
           ],
         ),

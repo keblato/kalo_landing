@@ -9,7 +9,7 @@ class MethodologyWidget extends StatelessWidget {
   Widget build(BuildContext context) => Column(
         children: <Widget>[
           Text(
-            '1, 2, 3 ¡ Listo !',
+            'methodology.title'.tr(),
             style: KaloTheme.textStyle.copyWith(
               fontSize: 27,
               fontWeight: FontWeight.w700,
@@ -17,7 +17,7 @@ class MethodologyWidget extends StatelessWidget {
           ),
           const SizedBox(height: 12),
           Text(
-            '''Nuestro proceso de elaboración de proyectos está \nestructurado de modo en que no te tengas que preocupar''',
+            'methodology.description'.tr(),
             textAlign: TextAlign.center,
             style: KaloTheme.acuminTextStyle
                 .copyWith(fontSize: 18, fontWeight: FontWeight.w300),
@@ -78,7 +78,7 @@ class MethodologyWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 22),
                     Text(
-                      'Identificamos\nel problema',
+                      'methodology.identify_problem'.tr(),
                       textAlign: TextAlign.center,
                       style: KaloTheme.textStyle.copyWith(
                         fontSize: 22,
@@ -102,7 +102,7 @@ class MethodologyWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 22),
                     Text(
-                      'Armamos tu\nequipo tech',
+                      'methodology.build_your_tech_team'.tr(),
                       textAlign: TextAlign.center,
                       style: KaloTheme.textStyle.copyWith(
                         fontSize: 22,
@@ -125,7 +125,7 @@ class MethodologyWidget extends StatelessWidget {
                     ),
                     const SizedBox(height: 22),
                     Text(
-                      '¡¡Inicia el \nproyecto!!',
+                      'methodology.start_the_proyect'.tr(),
                       textAlign: TextAlign.center,
                       style: KaloTheme.textStyle.copyWith(
                         fontSize: 22,

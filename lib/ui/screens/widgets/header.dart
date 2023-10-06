@@ -1,175 +1,120 @@
 part of '../screens.dart';
 
-class HeaderWidget extends StatelessWidget {
+class HeaderWidget extends StatefulWidget {
   const HeaderWidget({super.key});
+
+  @override
+  State<HeaderWidget> createState() => _HeaderWidgetState();
+}
+
+class _HeaderWidgetState extends State<HeaderWidget> {
+  bool switchVal = false;
 
   @override
   Widget build(BuildContext context) {
     double lateralPadding = MediaQuery.of(context).size.width * 0.1;
-    return ClipPath(
-      clipper: HeaderBezierClipper(),
-      child: Container(
-        color: const Color.fromRGBO(0, 32, 181, 1),
-        padding: EdgeInsets.only(left: lateralPadding, top: 20),
-        child: LayoutBuilder(
-          builder: (BuildContext context, BoxConstraints constraints) {
-            double width = constraints.maxWidth;
-            return Stack(
-              clipBehavior: Clip.none,
-              children: <Widget>[
-                Positioned(
-                  top: 150,
-                  right: width * 0.2,
-                  child: Container(
-                    height: 280,
-                    width: 280,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.5),
-                      shape: BoxShape.circle,
+    return Container(
+      color: const Color.fromRGBO(0, 32, 181, 1),
+      padding: EdgeInsets.only(left: lateralPadding, top: 20),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          Row(
+            children: <Widget>[
+              Image.asset(KaloIcons.logoWhite, width: 100),
+              const SizedBox(width: 20),
+              ...HeaderEnum.values.map(
+                (HeaderEnum header) => Padding(
+                  padding: const EdgeInsets.all(14),
+                  child: Text(
+                    header.title.tr(),
+                    style: KaloTheme.acuminTextStyle.copyWith(
+                      color: Colors.white,
+                      fontSize: 16,
                     ),
                   ),
                 ),
-                Positioned(
-                  bottom: -380,
-                  right: -50,
-                  child: Container(
-                    height: 500,
-                    width: 500,
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.5),
-                      shape: BoxShape.circle,
-                    ),
-                  ),
-                ),
-                Positioned(
-                  top: -250,
-                  right: -800,
-                  child: Container(
-                    height: 500,
-                    width: 650,
-                    transform: Matrix4.rotationZ(1),
-                    decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.5),
-                      borderRadius: const BorderRadius.all(
-                        Radius.circular(150),
-                      ),
-                    ),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+              ),
+              const Spacer(),
+              Flexible(
+                child: Row(
                   children: <Widget>[
-                    Row(
-                      children: <Widget>[
-                        Image.asset(KaloIcons.logoWhite, width: 100),
-                        const SizedBox(width: 20),
-                        ...<String>[
-                          'Servicios',
-                          'Empresas',
-                          'Nuestro proceso',
-                          'Comunidad',
-                        ].map(
-                          (String e) => Padding(
-                            padding: const EdgeInsets.all(14),
-                            child: Text(
-                              e,
-                              style: KaloTheme.acuminTextStyle.copyWith(
-                                color: Colors.white,
-                                fontSize: 16,
-                              ),
-                            ),
-                          ),
-                        ),
-                      ],
+                    const Icon(Icons.translate),
+                    Switch(
+                      value: switchVal,
+                      activeColor: Colors.red,
+                      onChanged: (bool value) {
+                        if (value) {
+                          context.setLocale(const Locale('en'));
+                        } else {
+                          context.setLocale(const Locale('es'));
+                        }
+                        switchVal = value;
+
+                        setState(() {});
+                      },
                     ),
-                    const SizedBox(height: 70),
-                    Text(
-                      'La tech \nhouse que \nnecesitas',
-                      style: KaloTheme.textStyle.copyWith(
-                        fontSize: 67,
-                        fontWeight: FontWeight.w700,
-                        color: const Color.fromRGBO(255, 255, 255, 1),
-                        height: 1,
-                      ),
-                    ),
-                    const SizedBox(height: 16),
-                    Text(
-                      '''Optimiza tu área tech y contrata desde un developer \nhasta equipos dedicados full time o por hora.''',
-                      style: KaloTheme.acuminTextStyle.copyWith(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                    ),
-                    const SizedBox(height: 92),
-                    Row(
-                      children: <Widget>[
-                        ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                              horizontal: 20,
-                              vertical: 15,
-                            ),
-                            backgroundColor: Colors.white,
-                            shape: RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(20),
-                            ),
-                          ),
-                          child: Text(
-                            'Contrata ahora',
-                            style: KaloTheme.acuminTextStyle.copyWith(
-                              fontSize: 14,
-                              fontWeight: FontWeight.w700,
-                              color: KaloTheme.primaryColor,
-                            ),
-                          ),
-                        ),
-                        const SizedBox(width: 42),
-                        Text(
-                          'Sé un desarrollador',
-                          style: KaloTheme.acuminTextStyle.copyWith(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ],
-                    ),
-                    const SizedBox(height: 180),
                   ],
                 ),
-              ],
-            );
-          },
-        ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 70),
+          Text(
+            'header.title'.tr(),
+            style: KaloTheme.textStyle.copyWith(
+              fontSize: 67,
+              fontWeight: FontWeight.w700,
+              color: const Color.fromRGBO(255, 255, 255, 1),
+              height: 1,
+            ),
+          ),
+          const SizedBox(height: 16),
+          Text(
+            'header.description'.tr(),
+            style: KaloTheme.acuminTextStyle.copyWith(
+              fontSize: 16,
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 92),
+          Row(
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 20,
+                    vertical: 15,
+                  ),
+                  backgroundColor: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                ),
+                child: Text(
+                  'header.contract_now'.tr(),
+                  style: KaloTheme.acuminTextStyle.copyWith(
+                    fontSize: 14,
+                    fontWeight: FontWeight.w700,
+                    color: KaloTheme.primaryColor,
+                  ),
+                ),
+              ),
+              const SizedBox(width: 42),
+              Text(
+                'header.be_developer'.tr(),
+                style: KaloTheme.acuminTextStyle.copyWith(
+                  fontSize: 14,
+                  fontWeight: FontWeight.w700,
+                  color: Colors.white,
+                ),
+              ),
+            ],
+          ),
+          const SizedBox(height: 180),
+        ],
       ),
     );
   }
-}
-
-class HeaderBezierClipper extends CustomClipper<Path> {
-  @override
-  Path getClip(Size size) {
-    Path path = Path()
-      ..lineTo(0, size.height * 0.87)
-      ..lineTo(size.width * 0.3475, size.height * 0.8775)
-      ..quadraticBezierTo(
-        size.width * 0.42925,
-        size.height * 0.89,
-        size.width * 0.4756500,
-        size.height * 0.945,
-      )
-      ..quadraticBezierTo(
-        size.width * 0.54175,
-        size.height * 0.998,
-        size.width * 0.6075,
-        size.height,
-      )
-      ..lineTo(size.width, size.height)
-      ..lineTo(size.width, 0);
-    return path;
-  }
-
-  @override
-  bool shouldReclip(CustomClipper<Path> oldClipper) => false;
 }

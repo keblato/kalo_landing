@@ -57,7 +57,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                   Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                 ),
                 child: Text(
-                  '¿No estás seguro de cómo avanzar?',
+                  'identify_your_needs.not_sure_how_move_forward'.tr(),
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 22,
                     fontWeight: FontWeight.w700,
@@ -76,7 +76,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                   Rect.fromLTWH(0, 0, bounds.width, bounds.height),
                 ),
                 child: Text(
-                  'Identificamos tus \nnecesidades',
+                  'identify_your_needs.identify_your_needs'.tr(),
                   style: KaloTheme.textStyle.copyWith(
                     fontSize: 90,
                     fontWeight: FontWeight.w700,
@@ -87,7 +87,7 @@ class IdentifyYourNeeds extends StatelessWidget {
               ),
               const SizedBox(height: 30),
               Text(
-                '''Contamos con consultores expertos en la resolución de proyectos que se \nencargarán de guiarte en tu proceso''',
+                'identify_your_needs.we_have_expert_consultants'.tr(),
                 style: KaloTheme.acuminTextStyle.copyWith(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
@@ -120,7 +120,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                       ),
                     ),
                     child: Text(
-                      'Agenda tu consultoría ahora',
+                      'identify_your_needs.book_now'.tr(),
                       style: KaloTheme.textStyle.copyWith(
                         fontSize: 20,
                         fontWeight: FontWeight.w600,
@@ -149,7 +149,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                           ],
                         ),
                         child: Text(
-                          'GRATIS!!',
+                          'identify_your_needs.free'.tr(),
                           style: KaloTheme.textStyle.copyWith(
                             fontSize: 18,
                             fontWeight: FontWeight.w600,

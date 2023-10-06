@@ -1,0 +1,68 @@
+{
+    "header": {
+        "menu_options": {
+            "services": "Services",
+            "enterprise": "Enterprise",
+            "our_process": "Our Process",
+            "community": "Comunity"
+        },
+        "title": "The tech \nhouse you \nneed",
+        "description": "Optimize your tech area and hire from a developer \nto full-time / hourly dedicated teams.",
+        "contract_now": "Contract now",
+        "be_developer": "Be a developer"
+    },
+    "popular_services": {
+        "popular_services": "Servicios populares",
+        "you_need_we_made": "¡Tú lo necesitas, nosotros lo hacemos!",
+        "carousel": {
+            "carousel0": {
+                "title": "Sitios",
+                "subtitle": "WEB"
+            },
+            "carousel1": {
+                "title": "Bases de",
+                "subtitle": "DATOS"
+            },
+            "carousel2": {
+                "title": "Software",
+                "subtitle": "A MEDIDA"
+            },
+            "carousel3": {
+                "title": "E-commerce",
+                "subtitle": "PERSONALIZADOS"
+            },
+            "carousel4": {
+                "title": "Aplicaciones",
+                "subtitle": "MÓVILES"
+            },
+            "carousel5": {
+                "title": "Integración",
+                "subtitle": "DE SISTEMAS"
+            },
+            "carousel6": {
+                "title": "Consultorías",
+                "subtitle": "TECNOLÓGICAS"
+            },
+            "carousel7": {
+                "title": "Servicios en",
+                "subtitle": "NUBE"
+            },
+            "carousel8": {
+                "title": "Prototipados",
+                "subtitle": "FRONT-END"
+            },
+            "carousel9": {
+                "title": "Mantenimiento",
+                "subtitle": "DE PÁGINAS"
+            },
+            "carousel10": {
+                "title": "Diseño",
+                "subtitle": "UI/UX"
+            },
+            "carouse11": {
+                "title": "Desarrollo",
+                "subtitle": "DE MVP'S"
+            }
+        }
+    }
+}
