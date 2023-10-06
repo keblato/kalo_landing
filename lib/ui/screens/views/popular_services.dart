@@ -1,4 +1,4 @@
-part of '../screens.dart';
+part of com.kalo.landing.views;
 
 const double itemCarrouselWidth = 200;
 

@@ -1,28 +1,36 @@
-part of './screens.dart';
+part of 'views.dart';
 
 class LandingScreen extends StatelessWidget {
   const LandingScreen({super.key});
+  void changeLanguage(BuildContext context, bool value) {
+    if (value) {
+      context.setLocale(const Locale('en'));
+    } else {
+      context.setLocale(const Locale('es'));
+    }
+  }
 
   @override
-  Widget build(BuildContext context) {
-    MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: ListView(
-        children: const <Widget>[
-          HeaderWidget(),
-          PopularServices(),
-          DontWorryWidget(),
-          ServicesWidget(),
-          SizedBox(height: 130),
-          MethodologyWidget(),
-          DevelopersWidget(key: Key('developers_widget')),
-          TrustedInUs(),
-          IdentifyYourNeeds(),
-          SizedBox(height: 60),
-          PlatformInConstruction(),
-          FooterWidget(),
-        ],
-      ),
-    );
-  }
+  Widget build(BuildContext context) => Scaffold(
+        body: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              HeaderWidget(
+                changeLanguage: (bool value) => changeLanguage(context, value),
+              ),
+              const PopularServices(),
+              const DontWorryWidget(),
+              const ServicesWidget(),
+              const SizedBox(height: 130),
+              const MethodologyWidget(),
+              const DevelopersWidget(key: Key('developers_widget')),
+              const TrustedInUs(),
+              const IdentifyYourNeeds(),
+              const SizedBox(height: 60),
+              const PlatformInConstruction(),
+              const FooterWidget(),
+            ],
+          ),
+        ),
+      );
 }
