@@ -1,4 +1,9 @@
 {
+    "common": {
+        "yes": "Yes",
+        "no": "No",
+        "see_more": "Learn more"
+    },
     "header": {
         "menu_options": {
             "services": "Services",
@@ -12,12 +17,12 @@
         "be_developer": "Be a developer"
     },
     "popular_services": {
-        "popular_services": "Servicios populares",
-        "you_need_we_made": "¡Tú lo necesitas, nosotros lo hacemos!",
+        "popular_services": "Popular services",
+        "you_need_we_made": "You need it ¡We can do it!",
         "carousel": {
             "carousel0": {
-                "title": "Sitios",
-                "subtitle": "WEB"
+                "title": "WEB",
+                "subtitle": "Sites"
             },
             "carousel1": {
                 "title": "Bases de",
@@ -64,5 +69,65 @@
                 "subtitle": "DE MVP'S"
             }
         }
+    },
+    "dont_worry": {
+        "first_message": {
+            "first": "Developers don't\n",
+            "second": "give me guarantees"
+        },
+        "second_message": {
+            "first": "I want to ",
+            "second": "improve ",
+            "third": "my bussines processes"
+        },
+        "third_message": {
+            "first": "I never get  ",
+            "second": "to hire the personal I need"
+        },
+        "title": "¡There’s nothing to worry about!",
+        "description": "We take care of giving you the best experience with the best developers"
+    },
+    "services": {
+        "build_teams": "We put together perfect development teams for you",
+        "project_manager_keeps_you_informed": "Your Project Manager keeps you informed and updated",
+        "guarantees_you_deserve": "We give you the guarantees you deserve"
+    },
+    "methodology": {
+        "title": "1, 2, 3 ¡ Ready to go !",
+        "description": "Our project preparation process is structured so that you don't have to worry",
+        "identify_problem": "Identify the\nproblem",
+        "build_your_tech_team": "Buld a dev\nteam",
+        "start_the_proyect": "¡¡Start \nworking!!"
+    },
+    "developers": {
+        "more_5000": "+5000",
+        "developers_in_our_community": "Developers in our community"
+    },
+    "trusted_in_us": "Companies\nthat trust us",
+    "identify_your_needs": {
+        "not_sure_how_move_forward": "Not sure how to move forward?",
+        "identify_your_needs": "We identify\nyour needs",
+        "we_have_expert_consultants": "We have expert consultants in project resolution who will be in charge of guiding you in your process",
+        "book_now": "Schedule your consultation now",
+        "free": "FREE!!"
+    },
+    "platform_in_construction": {
+        "title": "¡¡Platform under\nconstruction!!",
+        "follow_us": "Follow us on networks so you don't miss any\nupdates from the company or our team."
+    },
+    "footer": {
+        "enterprise": "Enterprises",
+        "make_an_appointment": "Schedule an appointment",
+        "start_projects": "Start projects",
+        "contract_developers": "Hire developers",
+        "developers": "Developers",
+        "work_with_us": "Work with us",
+        "company": "Company",
+        "about_us": "About us",
+        "community": "Community",
+        "channels": "Channels",
+        "contact": "Contact",
+        "contact_us": "Contact us",
+        "customer_service": "Customer service"
     }
 }

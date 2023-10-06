@@ -1,5 +1,4 @@
-import 'package:flutter/material.dart';
-import '../theme.dart';
+part of com.kalo.landing.widgets;
 
 class ChatBubble extends StatelessWidget {
   const ChatBubble({

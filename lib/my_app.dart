@@ -1,7 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
-import 'ui/screens/screens.dart';
+import 'ui/screens/views.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
