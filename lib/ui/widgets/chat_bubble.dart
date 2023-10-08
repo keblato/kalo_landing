@@ -21,12 +21,14 @@ class ChatBubble extends StatelessWidget {
   final BorderRadiusGeometry borderRadius;
 
   @override
-  Widget build(BuildContext context) => Container(
+  Widget build(BuildContext context) => DecoratedBox(
         decoration: BoxDecoration(color: color, borderRadius: borderRadius),
-        width: width,
-        height: height,
-        alignment: Alignment.center,
-        padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: child,
+        child: ScalePadding(
+          paddingWeb: const EdgeInsets.symmetric(horizontal: 20, vertical: 13),
+          paddingTablet:
+              const EdgeInsets.symmetric(horizontal: 12, vertical: 9),
+          paddingMobile: const EdgeInsets.symmetric(horizontal: 7, vertical: 5),
+          child: child,
+        ),
       );
 }

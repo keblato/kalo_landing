@@ -5,52 +5,103 @@ class ServicesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).isMobile;
+
     double lateralPadding = MediaQuery.of(context).size.width * 0.1;
-    return Container(
-      height: 500,
+    double width = MediaQuery.of(context).size.width * 0.38;
+    double height = width * 1.2;
+    return Padding(
       padding: EdgeInsets.symmetric(horizontal: lateralPadding),
-      child: LayoutBuilder(
-        builder: (BuildContext context, BoxConstraints constraints) {
-          double width = constraints.maxWidth;
-          return Row(
-            children: <Widget>[
-              SizedBox(
-                height: 500,
-                width: width * 0.6,
-                child: _ImageInfo(
-                  imgPath: KaloImages.features1,
-                  title: 'services.build_teams'.tr(),
-                  showSeeMore: true,
-                ),
-              ),
-              const SizedBox(width: 20),
-              SizedBox(
-                height: 500,
-                width: width * 0.4 - 20,
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 240,
-                      child: _ImageInfo(
-                        imgPath: KaloImages.features2,
-                        title:
-                            'services.project_manager_keeps_you_informed'.tr(),
-                      ),
+      child: Column(
+        children: <Widget>[
+          const Spacing(
+            direction: SpacingDirection.vertical,
+            web: 190,
+            tablet: 80,
+            mobile: 85,
+          ),
+          if (isMobile)
+            Column(
+              children: <Widget>[
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 30,
+                  ),
+                  child: SizedBox(
+                    height: 459,
+                    child: _ImageInfo(
+                      imgPath: KaloImages.features1,
+                      title: 'services.build_teams'.tr(),
+                      showSeeMore: true,
                     ),
-                    const SizedBox(height: 20),
-                    SizedBox(
-                      height: 240,
-                      child: _ImageInfo(
-                        imgPath: KaloImages.features3,
-                        title: 'services.guarantees_you_deserve'.tr(),
-                      ),
-                    ),
-                  ],
+                  ),
                 ),
-              ),
-            ],
-          );
-        },
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 30,
+                  ),
+                  child: SizedBox(
+                    height: 459,
+                    child: _ImageInfo(
+                      imgPath: KaloImages.features2,
+                      title: 'services.project_manager_keeps_you_informed'.tr(),
+                    ),
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(
+                    bottom: 30,
+                  ),
+                  child: SizedBox(
+                    height: 459,
+                    child: _ImageInfo(
+                      imgPath: KaloImages.features3,
+                      title: 'services.guarantees_you_deserve'.tr(),
+                    ),
+                  ),
+                ),
+              ],
+            )
+          else
+            Row(
+              children: <Widget>[
+                SizedBox(
+                  height: height,
+                  width: width,
+                  child: _ImageInfo(
+                    imgPath: KaloImages.features1,
+                    title: 'services.build_teams'.tr(),
+                    showSeeMore: true,
+                  ),
+                ),
+                const SizedBox(width: 20),
+                SizedBox(
+                  height: height,
+                  width: width,
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: (height / 2) - 10,
+                        child: _ImageInfo(
+                          imgPath: KaloImages.features2,
+                          title: 'services.project_manager_keeps_you_informed'
+                              .tr(),
+                        ),
+                      ),
+                      const SizedBox(height: 20),
+                      SizedBox(
+                        height: (height / 2) - 10,
+                        child: _ImageInfo(
+                          imgPath: KaloImages.features3,
+                          title: 'services.guarantees_you_deserve'.tr(),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+        ],
       ),
     );
   }
@@ -79,7 +130,7 @@ class _ImageInfo extends StatelessWidget {
                 left: 0,
                 bottom: 0,
                 right: 0,
-                child: Image.asset(imgPath, fit: BoxFit.cover),
+                child: Image.asset(imgPath, fit: BoxFit.fitHeight),
               ),
               Positioned(
                 bottom: showSeeMore ? 32 : 18,
@@ -89,24 +140,27 @@ class _ImageInfo extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
-                    Text(
-                      title,
-                      style: KaloTheme.textStyle.copyWith(
-                        color: Colors.white,
-                        fontSize: showSeeMore ? 28 : 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                    ScaleText(
+                      text: title,
+                      textStyle: KaloTheme.textStyle.copyWith(),
+                      webFontSize: showSeeMore ? 41 : 26,
+                      tabletFontSize: showSeeMore ? 16 : 10,
+                      mobileFontSize: showSeeMore ? 21 : 19,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
                     ),
                     if (showSeeMore) ...<Widget>[
                       const SizedBox(height: 5),
-                      Text(
-                        'common.see_more'.tr(),
-                        style: KaloTheme.textStyle.copyWith(
-                          color: Colors.white,
-                          fontSize: 18,
-                          fontWeight: FontWeight.w500,
+                      ScaleText(
+                        text: 'common.see_more'.tr(),
+                        textStyle: KaloTheme.textStyle.copyWith(
                           decoration: TextDecoration.underline,
                         ),
+                        webFontSize: 26,
+                        tabletFontSize: 10,
+                        mobileFontSize: 14,
+                        fontWeight: FontWeight.w500,
+                        color: Colors.white,
                       ),
                     ],
                   ],

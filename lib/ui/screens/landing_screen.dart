@@ -13,7 +13,8 @@ class LandingScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) => Scaffold(
         body: SingleChildScrollView(
-          child: Column(
+          child: ListView(
+            shrinkWrap: true,
             children: <Widget>[
               HeaderWidget(
                 changeLanguage: (bool value) => changeLanguage(context, value),
