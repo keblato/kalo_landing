@@ -12,26 +12,24 @@ class LandingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Scaffold(
-        body: SingleChildScrollView(
-          child: ListView(
-            shrinkWrap: true,
-            children: <Widget>[
-              HeaderWidget(
-                changeLanguage: (bool value) => changeLanguage(context, value),
-              ),
-              const PopularServices(),
-              const DontWorryWidget(),
-              const ServicesWidget(),
-              const SizedBox(height: 130),
-              const MethodologyWidget(),
-              const DevelopersWidget(key: Key('developers_widget')),
-              const TrustedInUs(),
-              const IdentifyYourNeeds(),
-              const SizedBox(height: 60),
-              const PlatformInConstruction(),
-              const FooterWidget(),
-            ],
-          ),
+        body: ListView(
+          shrinkWrap: true,
+          children: <Widget>[
+            HeaderWidget(
+              changeLanguage: (bool value) => changeLanguage(context, value),
+            ),
+            const PopularServices(),
+            const DontWorryWidget(),
+            const ServicesWidget(),
+            const SizedBox(height: 130),
+            const MethodologyWidget(),
+            const DevelopersWidget(key: Key('developers_widget')),
+            const TrustedInUs(),
+            const IdentifyYourNeeds(),
+            const SizedBox(height: 60),
+            const PlatformInConstruction(),
+            const FooterWidget(),
+          ],
         ),
       );
 }
