@@ -5,6 +5,7 @@ import 'dart:async';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:simple_rich_text/simple_rich_text.dart';
 import 'package:video_player/video_player.dart';
 import '../../core/extensions_methods.dart';
 import '../../enums/enums.dart';

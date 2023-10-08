@@ -112,25 +112,26 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                           ],
                         )
                       else
-                        Row(
-                          children: <Widget>[
-                            Image.asset(KaloIcons.logoWhite, width: 98),
-                            ...HeaderEnum.values.map(
-                              (HeaderEnum header) => Padding(
-                                padding: const EdgeInsets.all(14),
-                                child: ScaleText(
-                                  text: header.title.tr(),
-                                  textStyle: KaloTheme.acuminTextStyle,
-                                  color: Colors.white,
-                                  webFontSize: 15,
-                                  mobileFontSize: 8.6,
-                                  tabletFontSize: 16,
+                        SingleChildScrollView(
+                          scrollDirection: Axis.horizontal,
+                          controller: ScrollController(),
+                          child: Row(
+                            children: <Widget>[
+                              Image.asset(KaloIcons.logoWhite, width: 98),
+                              ...HeaderEnum.values.map(
+                                (HeaderEnum header) => Padding(
+                                  padding: const EdgeInsets.all(14),
+                                  child: ScaleText(
+                                    text: header.title.tr(),
+                                    textStyle: KaloTheme.acuminTextStyle,
+                                    color: Colors.white,
+                                    webFontSize: 15,
+                                    mobileFontSize: 8.6,
+                                    tabletFontSize: 16,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const Spacer(),
-                            Flexible(
-                              child: Row(
+                              Row(
                                 children: <Widget>[
                                   const Icon(Icons.translate),
                                   Switch(
@@ -144,8 +145,8 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                                   ),
                                 ],
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
                     ],
                   ),

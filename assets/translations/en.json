@@ -20,70 +20,24 @@
         "popular_services": "Popular services",
         "you_need_we_made": "You need it ¡We can do it!",
         "carousel": {
-            "carousel0": {
-                "title": "WEB",
-                "subtitle": "Sites"
-            },
-            "carousel1": {
-                "title": "Bases de",
-                "subtitle": "DATOS"
-            },
-            "carousel2": {
-                "title": "Software",
-                "subtitle": "A MEDIDA"
-            },
-            "carousel3": {
-                "title": "E-commerce",
-                "subtitle": "PERSONALIZADOS"
-            },
-            "carousel4": {
-                "title": "Aplicaciones",
-                "subtitle": "MÓVILES"
-            },
-            "carousel5": {
-                "title": "Integración",
-                "subtitle": "DE SISTEMAS"
-            },
-            "carousel6": {
-                "title": "Consultorías",
-                "subtitle": "TECNOLÓGICAS"
-            },
-            "carousel7": {
-                "title": "Servicios en",
-                "subtitle": "NUBE"
-            },
-            "carousel8": {
-                "title": "Prototipados",
-                "subtitle": "FRONT-END"
-            },
-            "carousel9": {
-                "title": "Mantenimiento",
-                "subtitle": "DE PÁGINAS"
-            },
-            "carousel10": {
-                "title": "Diseño",
-                "subtitle": "UI/UX"
-            },
-            "carouse11": {
-                "title": "Desarrollo",
-                "subtitle": "DE MVP'S"
-            }
+            "carousel0": "Sitios\n*WEB*",
+            "carousel1": "Bases de\nDATOS",
+            "carousel2": "Software\nA MEDIDA",
+            "carousel3": "commerce\nPERSONALIZADOS",
+            "carousel4": "Aplicaciones\nMÓVILES",
+            "carousel5": "Integración\nDE SISTEMAS",
+            "carousel6": "Consultorías\nTECNOLÓGICAS",
+            "carousel7": "Servicios en\nNUBE",
+            "carousel8": "Prototipados\nFRONT-END",
+            "carousel9": "Mantenimiento\nDE PÁGINAS",
+            "carousel10": "Diseño\nUI/UX",
+            "carouse11": "Desarrollo\nDE MVP'S"
         }
     },
     "dont_worry": {
-        "first_message": {
-            "first": "Developers don't\n",
-            "second": "give me guarantees"
-        },
-        "second_message": {
-            "first": "I want to ",
-            "second": "improve ",
-            "third": "my bussines processes"
-        },
-        "third_message": {
-            "first": "I never get  ",
-            "second": "to hire the personal I need"
-        },
+        "first_message": "Los programadores\n*no me dan garantías*",
+        "second_message": "Quisiera *mejorar los\nprocesos* de mi empresa",
+        "third_message": "*Nunca consigo* el\npersonal que necesito ",
         "title": "¡There’s nothing to worry about!",
         "description": "We take care of giving you the best experience with the best developers"
     },

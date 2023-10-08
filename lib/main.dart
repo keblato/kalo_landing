@@ -12,7 +12,7 @@ void main() async {
         Locale('es'),
         Locale('en'),
       ],
-      path: 'assets/translations',
+      path: 'translations',
       fallbackLocale: const Locale('es'),
       child: const MyApp(),
     ),

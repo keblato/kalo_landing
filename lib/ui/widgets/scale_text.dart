@@ -11,6 +11,7 @@ class ScaleText extends StatelessWidget {
     this.tabletFontSize,
     this.mobileFontSize,
     this.textAlign,
+    this.isRichText = false,
     super.key,
   });
 
@@ -23,6 +24,7 @@ class ScaleText extends StatelessWidget {
   final double? tabletFontSize;
   final double? mobileFontSize;
   final TextAlign? textAlign;
+  final bool isRichText;
   double? getFontSize(BuildContext context) {
     bool isMobile = MediaQuery.of(context).isMobile;
     bool isTablet = MediaQuery.of(context).isTablet;
@@ -37,14 +39,25 @@ class ScaleText extends StatelessWidget {
   }
 
   @override
-  Widget build(BuildContext context) => Text(
-        text,
-        style: textStyle.copyWith(
-          fontSize: getFontSize(context),
-          fontWeight: fontWeight,
-          color: color,
-          height: height,
-        ),
-        textAlign: textAlign,
-      );
+  Widget build(BuildContext context) => isRichText
+      ? SimpleRichText(
+          text,
+          style: textStyle.copyWith(
+            fontSize: getFontSize(context),
+            fontWeight: fontWeight,
+            color: color,
+            height: height,
+          ),
+          textAlign: textAlign,
+        )
+      : Text(
+          text,
+          style: textStyle.copyWith(
+            fontSize: getFontSize(context),
+            fontWeight: fontWeight,
+            color: color,
+            height: height,
+          ),
+          textAlign: textAlign,
+        );
 }

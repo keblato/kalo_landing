@@ -12,177 +12,211 @@ class PopularServices extends StatefulWidget {
 class _PopularServicesState extends State<PopularServices> {
   final ScrollController scrollController = ScrollController();
 
-  double carrouselPadding = 0;
-
-  double getCarrouselItemPadding(double width) {
-    int numberItems = width ~/ itemCarrouselWidth;
-    double padding = (width - (numberItems * itemCarrouselWidth)) / numberItems;
-    carrouselPadding = padding;
-    return padding;
-  }
-
   @override
   Widget build(BuildContext context) {
     double lateralPadding = MediaQuery.of(context).size.width * 0.1;
+
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: lateralPadding),
       child: Column(
-        mainAxisSize: MainAxisSize.min,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
-          Column(
-            mainAxisSize: MainAxisSize.min,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: <Widget>[
-              Text(
-                'popular_services.popular_services'.tr(),
-                style: KaloTheme.textStyle.copyWith(
-                  fontSize: 27,
-                  fontWeight: FontWeight.w700,
-                  color: KaloTheme.primaryColor,
-                ),
-              ),
-              const SizedBox(height: 8),
-              Text(
-                'popular_services.you_need_we_made'.tr(),
-                style: KaloTheme.acuminTextStyle.copyWith(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w100,
-                ),
-              ),
-            ],
+          ScaleText(
+            text: 'popular_services.popular_services'.tr(),
+            textStyle: KaloTheme.textStyle.copyWith(),
+            webFontSize: 36,
+            tabletFontSize: 18,
+            mobileFontSize: 24,
+            fontWeight: FontWeight.w700,
+            color: KaloTheme.primaryColor,
           ),
-          const SizedBox(height: 34),
-          SizedBox(
-            height: 280,
-            width: double.infinity,
-            child: Stack(
-              clipBehavior: Clip.none,
-              children: <Widget>[
-                Positioned(
-                  left: -80,
-                  top: 0,
-                  bottom: 0,
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () => scrollController.animateTo(
-                      scrollController.offset -
-                          itemCarrouselWidth -
-                          carrouselPadding,
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeInOut,
-                    ),
-                    color: Colors.deepPurple,
-                    icon: const Icon(Icons.chevron_left, size: 80),
-                  ),
-                ),
-                LayoutBuilder(
-                  builder: (BuildContext context, BoxConstraints constraints) =>
-                      ListView.builder(
-                    scrollDirection: Axis.horizontal,
-                    physics: const NeverScrollableScrollPhysics(),
-                    controller: scrollController,
-                    itemCount: PopularServicesCarouselEnum.values.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      PopularServicesCarouselEnum carouselItem =
-                          PopularServicesCarouselEnum.values[index];
-                      return PopularServicesCard(
-                        margin: getCarrouselItemPadding(constraints.maxWidth),
-                        imagePath: carouselItem.image,
-                        title: carouselItem.title.tr(),
-                        subtitle: carouselItem.subtitle.tr(),
-                      );
-                    },
-                  ),
-                ),
-                Positioned(
-                  right: -80,
-                  top: 0,
-                  bottom: 0,
-                  child: IconButton(
-                    padding: EdgeInsets.zero,
-                    onPressed: () => scrollController.animateTo(
-                      scrollController.offset +
-                          itemCarrouselWidth +
-                          carrouselPadding,
-                      duration: const Duration(milliseconds: 500),
-                      curve: Curves.easeInOut,
-                    ),
-                    color: Colors.deepPurple,
-                    icon: const Icon(Icons.chevron_right, size: 80),
-                  ),
-                ),
-              ],
+          const SizedBox(height: 8),
+          ScaleText(
+            text: 'popular_services.you_need_we_made'.tr(),
+            textStyle: KaloTheme.acuminTextStyle,
+            webFontSize: 24,
+            tabletFontSize: 12,
+            mobileFontSize: 16,
+          ),
+          const Spacing(
+            direction: SpacingDirection.vertical,
+            web: 46,
+            tablet: 34,
+            mobile: 19,
+          ),
+          ScaleSizedBox(
+            heightWeb: 370,
+            heightTablet: 200,
+            heightMobile: 280,
+            child: PopularServiceCarousel(
+              numOfCards: 3,
+              scrollController: scrollController,
             ),
           ),
-          const SizedBox(height: 80),
         ],
       ),
     );
   }
 }
 
+class PopularServiceCarousel extends StatefulWidget {
+  const PopularServiceCarousel({
+    required this.numOfCards,
+    required this.scrollController,
+    super.key,
+  });
+  final ScrollController scrollController;
+  final int numOfCards;
+  @override
+  State<PopularServiceCarousel> createState() => _PopularServiceCarouselState();
+}
+
+class _PopularServiceCarouselState extends State<PopularServiceCarousel> {
+  ScrollController scrollController = ScrollController();
+  int currentIndex = 3;
+
+  @override
+  Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).isMobile;
+
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        if (!isMobile) ...<Widget>[
+          GestureDetector(
+            onTap: () {
+              scrollController.animateTo(
+                scrollController.offset - 300 <
+                        scrollController.position.minScrollExtent
+                    ? scrollController.offset - 300
+                    : scrollController.position.minScrollExtent,
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.slowMiddle,
+              );
+            },
+            child: const Icon(
+              Icons.chevron_left,
+              color: Colors.deepPurple,
+              size: 80,
+            ),
+          ),
+          const Spacing(
+            direction: SpacingDirection.horizontal,
+            web: 43,
+            tablet: 12,
+          ),
+        ],
+        Expanded(
+          child: ListView.builder(
+            controller: scrollController,
+            scrollDirection: Axis.horizontal,
+            itemCount: PopularServicesCarouselEnum.values.length,
+            itemBuilder: (BuildContext context, int index) {
+              PopularServicesCarouselEnum carouselItem =
+                  PopularServicesCarouselEnum.values[index];
+              return PopularServicesCard(
+                imagePath: carouselItem.image,
+                title: carouselItem.title.tr(),
+              );
+            },
+          ),
+        ),
+        if (!isMobile) ...<Widget>[
+          const Spacing(
+            direction: SpacingDirection.horizontal,
+            web: 43,
+            tablet: 12,
+          ),
+          GestureDetector(
+            onTap: () {
+              scrollController.animateTo(
+                scrollController.offset + 300 <
+                        scrollController.position.maxScrollExtent
+                    ? scrollController.offset + 300
+                    : scrollController.position.maxScrollExtent,
+                duration: const Duration(milliseconds: 200),
+                curve: Curves.slowMiddle,
+              );
+            },
+            child: const Icon(
+              Icons.chevron_right,
+              color: Colors.deepPurple,
+              size: 80,
+            ),
+          ),
+        ],
+      ],
+    );
+  }
+}
+
 class PopularServicesCard extends StatelessWidget {
   const PopularServicesCard({
-    required this.margin,
     required this.imagePath,
     required this.title,
-    required this.subtitle,
     super.key,
   });
 
-  final double margin;
   final String imagePath;
   final String title;
-  final String subtitle;
 
   @override
-  Widget build(BuildContext context) => Container(
-        width: itemCarrouselWidth,
-        margin: EdgeInsets.only(right: margin / 2, left: margin / 2),
-        child: Container(
-          padding: const EdgeInsets.only(right: 12),
-          child: ClipRRect(
-            borderRadius: BorderRadius.circular(12),
-            child: Stack(
-              children: <Widget>[
-                Positioned(
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  bottom: 0,
-                  child: Image.asset(imagePath, fit: BoxFit.cover),
-                ),
-                Positioned(
-                  left: 12,
-                  bottom: 12,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        title,
-                        style: KaloTheme.textStyle.copyWith(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
-                          height: 1.1,
-                        ),
-                      ),
-                      Text(
-                        subtitle,
-                        style: KaloTheme.textStyle.copyWith(
-                          color: Colors.white,
-                          fontSize: 20,
-                          height: 1.1,
-                          fontWeight: FontWeight.w100,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+  Widget build(BuildContext context) => ScalePadding(
+        paddingWeb: const EdgeInsets.only(right: 40),
+        paddingTablet: const EdgeInsets.only(right: 26),
+        paddingMobile: const EdgeInsets.only(right: 34),
+        child: Stack(
+          children: <Widget>[
+            ScaleImage(
+              path: imagePath,
+              fit: BoxFit.cover,
+              heightWeb: 360,
+              heightTablet: 190,
+              heightMobile: 260,
+              widthWeb: 258,
+              widthTablet: 130,
+              widthMobile: 165,
             ),
-          ),
+            ScalePadding(
+              paddingWeb: const EdgeInsets.only(
+                left: 14,
+                bottom: 30,
+              ),
+              paddingTablet: const EdgeInsets.only(
+                left: 14,
+                bottom: 25,
+              ),
+              paddingMobile: const EdgeInsets.only(
+                left: 14,
+                bottom: 50,
+              ),
+              child: ScaleSizedBox(
+                heightWeb: 360,
+                heightTablet: 190,
+                heightMobile: 260,
+                widthWeb: 258,
+                widthTablet: 130,
+                widthMobile: 165,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: <Widget>[
+                    ScaleText(
+                      isRichText: true,
+                      text: title,
+                      textStyle: KaloTheme.textStyle.copyWith(
+                        height: 1.1,
+                      ),
+                      webFontSize: 26,
+                      tabletFontSize: 15,
+                      mobileFontSize: 19,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
         ),
       );
 }
