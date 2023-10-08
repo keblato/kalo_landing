@@ -8,11 +8,14 @@ class ServicesWidget extends StatelessWidget {
     bool isMobile = MediaQuery.of(context).isMobile;
 
     double lateralPadding = MediaQuery.of(context).size.width * 0.1;
-    double width = MediaQuery.of(context).size.width * 0.38;
+    double width = MediaQuery.of(context).size.width > 1920
+        ? 700
+        : MediaQuery.of(context).size.width * 0.38;
     double height = width * 1.2;
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: lateralPadding),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
           const Spacing(
             direction: SpacingDirection.vertical,
@@ -64,6 +67,7 @@ class ServicesWidget extends StatelessWidget {
             )
           else
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 SizedBox(
                   height: height,
