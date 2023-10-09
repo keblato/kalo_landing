@@ -11,6 +11,12 @@ class DontWorryWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        const Spacing(
+          web: 120,
+          tablet: 80,
+          mobile: 0,
+          direction: SpacingDirection.vertical,
+        ),
         if (isMobile)
           SizedBox(
             width: 200,

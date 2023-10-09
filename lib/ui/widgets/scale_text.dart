@@ -11,6 +11,7 @@ class ScaleText extends StatelessWidget {
     this.tabletFontSize,
     this.mobileFontSize,
     this.textAlign,
+    this.textHeightBehavior,
     this.isRichText = false,
     super.key,
   });
@@ -25,6 +26,8 @@ class ScaleText extends StatelessWidget {
   final double? mobileFontSize;
   final TextAlign? textAlign;
   final bool isRichText;
+  final TextHeightBehavior? textHeightBehavior;
+
   double? getFontSize(BuildContext context) {
     bool isMobile = MediaQuery.of(context).isMobile;
     bool isTablet = MediaQuery.of(context).isTablet;
@@ -59,5 +62,6 @@ class ScaleText extends StatelessWidget {
             height: height,
           ),
           textAlign: textAlign,
+          textHeightBehavior: textHeightBehavior,
         );
 }
