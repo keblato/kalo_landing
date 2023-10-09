@@ -42,14 +42,30 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
   }
 
   @override
-  Widget build(BuildContext context) => Padding(
-        padding: const EdgeInsets.only(bottom: 140),
-        child: Stack(
+  Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).isMobile;
+
+    return Column(
+      children: <Widget>[
+        const Spacing(
+          direction: SpacingDirection.vertical,
+          mobile: 115,
+        ),
+        if (isMobile) ...<Widget>[
+          const _DevelopersTitle(),
+          const Spacing(
+            direction: SpacingDirection.vertical,
+            mobile: 70,
+          ),
+        ],
+        Stack(
           clipBehavior: Clip.none,
           children: <Widget>[
-            Positioned(
+            const Positioned(
               top: 120,
-              child: Image.asset(KaloImages.developersWave),
+              child: ScaleImage(
+                path: KaloImages.developersWave,
+              ),
             ),
             Positioned(
               top: 340,
@@ -74,9 +90,14 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
                     controller: _scrollController,
                     children: List<Widget>.generate(
                       10,
-                      (int index) => Padding(
-                        padding: const EdgeInsets.only(right: 70),
-                        child: Image.asset(KaloImages.technologies),
+                      (int index) => const Padding(
+                        padding: EdgeInsets.only(right: 70),
+                        child: ScaleImage(
+                          path: KaloImages.technologies,
+                          heightWeb: 72,
+                          heightTablet: 41,
+                          heightMobile: 40,
+                        ),
                       ),
                     ),
                   ),
@@ -87,44 +108,61 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Image.asset(KaloImages.phone, height: 480),
-                ShaderMask(
-                  blendMode: BlendMode.srcIn,
-                  shaderCallback: (Rect bounds) => const LinearGradient(
-                    colors: <Color>[Color(0xFF00FFA3), Color(0xFF005AE4)],
-                    stops: <double>[-0.3, 1],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ).createShader(
-                    Rect.fromLTWH(0, 0, bounds.width, bounds.height),
-                  ),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.end,
-                    children: <Widget>[
-                      const SizedBox(height: 80),
-                      Text(
-                        'developers.more_5000'.tr(),
-                        style: KaloTheme.textStyle.copyWith(
-                          fontSize: 120,
-                          fontWeight: FontWeight.w800,
-                        ),
-                        textHeightBehavior: const TextHeightBehavior(
-                          applyHeightToLastDescent: false,
-                          applyHeightToFirstAscent: false,
-                        ),
-                      ),
-                      Text(
-                        'developers.developers_in_our_community'.tr(),
-                        style: KaloTheme.textStyle.copyWith(
-                          fontSize: 18,
-                          fontWeight: FontWeight.w800,
-                          height: 0.1,
-                        ),
-                      ),
-                    ],
-                  ),
+                const ScaleImage(
+                  path: KaloImages.phone,
+                  heightWeb: 480,
+                  heightTablet: 480,
+                  heightMobile: 370,
                 ),
+                if (!isMobile) const _DevelopersTitle(),
               ],
+            ),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _DevelopersTitle extends StatelessWidget {
+  const _DevelopersTitle();
+
+  @override
+  Widget build(BuildContext context) => ShaderMask(
+        blendMode: BlendMode.srcIn,
+        shaderCallback: (Rect bounds) => const LinearGradient(
+          colors: <Color>[Color(0xFF00FFA3), Color(0xFF005AE4)],
+          stops: <double>[-0.3, 1],
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+        ).createShader(
+          Rect.fromLTWH(0, 0, bounds.width, bounds.height),
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: <Widget>[
+            const SizedBox(height: 80),
+            ScaleText(
+              text: 'developers.more_5000'.tr(),
+              textStyle: KaloTheme.textStyle.copyWith(),
+              fontWeight: FontWeight.w800,
+              webFontSize: 160,
+              tabletFontSize: 70,
+              mobileFontSize: 107,
+              textHeightBehavior: const TextHeightBehavior(
+                applyHeightToLastDescent: false,
+                applyHeightToFirstAscent: false,
+              ),
+            ),
+            ScaleText(
+              text: 'developers.developers_in_our_community'.tr(),
+              webFontSize: 24,
+              tabletFontSize: 11,
+              mobileFontSize: 16,
+              textStyle: KaloTheme.textStyle.copyWith(
+                height: 0.1,
+              ),
+              fontWeight: FontWeight.w800,
             ),
           ],
         ),

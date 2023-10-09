@@ -86,7 +86,7 @@ class _PopularServiceCarouselState extends State<PopularServiceCarousel> {
           GestureDetector(
             onTap: () {
               scrollController.animateTo(
-                scrollController.offset - 300 <
+                scrollController.offset - 300 >
                         scrollController.position.minScrollExtent
                     ? scrollController.offset - 300
                     : scrollController.position.minScrollExtent,

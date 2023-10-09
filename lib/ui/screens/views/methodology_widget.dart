@@ -3,141 +3,222 @@ part of com.kalo.landing.views;
 class MethodologyWidget extends StatelessWidget {
   const MethodologyWidget({super.key});
 
-  static const double imageSize = 60;
-
   @override
-  Widget build(BuildContext context) => Column(
-        children: <Widget>[
-          Text(
-            'methodology.title'.tr(),
-            style: KaloTheme.textStyle.copyWith(
-              fontSize: 27,
-              fontWeight: FontWeight.w700,
+  Widget build(BuildContext context) {
+    bool isMobile = MediaQuery.of(context).isMobile;
+    bool isTablet = MediaQuery.of(context).isTablet;
+    return Column(
+      children: <Widget>[
+        ScaleText(
+          text: 'methodology.title'.tr(),
+          textStyle: KaloTheme.textStyle,
+          webFontSize: 36,
+          tabletFontSize: 18,
+          mobileFontSize: 24,
+          fontWeight: FontWeight.bold,
+        ),
+        const Spacing(
+          direction: SpacingDirection.vertical,
+          web: 16,
+          tablet: 9,
+          mobile: 17,
+        ),
+        ScaleText(
+          text: 'methodology.description'.tr(),
+          textAlign: TextAlign.center,
+          textStyle: KaloTheme.acuminTextStyle,
+          webFontSize: 24,
+          tabletFontSize: 12,
+          mobileFontSize: 16,
+        ),
+        const Spacing(
+          direction: SpacingDirection.vertical,
+          web: 116,
+          tablet: 56,
+          mobile: 109,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            const ScaleSizedBox(
+              heightTablet: 200,
+              heightWeb: 300,
+              heightMobile: 100,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Color.fromARGB(91, 46, 154, 255),
+                      blurRadius: 500,
+                      spreadRadius: 80,
+                    ),
+                  ],
+                ),
+              ),
             ),
-          ),
-          const SizedBox(height: 12),
-          Text(
-            'methodology.description'.tr(),
-            textAlign: TextAlign.center,
-            style: KaloTheme.acuminTextStyle
-                .copyWith(fontSize: 18, fontWeight: FontWeight.w300),
-          ),
-          const SizedBox(height: 140),
-          Stack(
-            clipBehavior: Clip.none,
-            children: <Widget>[
-              Image.asset(
-                KaloImages.methodologyWave,
-                fit: BoxFit.fitWidth,
-              ),
-              const Positioned(
-                left: -250,
-                top: 0,
-                height: 300,
-                width: 300,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                        color: KaloTheme.primaryColor,
-                        blurRadius: 380,
-                        spreadRadius: 30,
+            ScaleSizedBox(
+              widthWeb: 1200,
+              widthTablet: 760,
+              widthMobile: 400,
+              child: LayoutBuilder(
+                builder: (_, BoxConstraints constraints) {
+                  double imageSize = 60;
+
+                  double searchXPos = 250;
+                  double searchYPos = 145;
+
+                  double crewXPos = 550;
+                  double crewYPos = 70;
+
+                  double rocketXPos = 750;
+                  double rocketYPos = 135;
+                  if (isTablet) {
+                    imageSize = 37;
+
+                    searchXPos = 170;
+                    searchYPos = 110;
+
+                    crewXPos = 350;
+                    crewYPos = 60;
+
+                    rocketXPos = 500;
+                    rocketYPos = 110;
+                  }
+                  if (isMobile) {
+                    imageSize = 31;
+
+                    searchXPos = 80;
+                    searchYPos = 45;
+
+                    crewXPos = 165;
+                    crewYPos = 20;
+
+                    rocketXPos = 260;
+                    rocketYPos = 45;
+                  }
+
+                  return Stack(
+                    clipBehavior: Clip.none,
+                    children: <Widget>[
+                      Image.asset(
+                        KaloImages.methodologyWave,
+                        fit: BoxFit.fitWidth,
+                      ),
+                      Positioned(
+                        bottom: searchYPos,
+                        left: searchXPos,
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              KaloIcons.searchLogo,
+                              height: imageSize,
+                              width: imageSize,
+                            ),
+                            const Spacing(
+                              direction: SpacingDirection.horizontal,
+                              web: 29,
+                              tablet: 16,
+                              mobile: 14,
+                            ),
+                            ScaleText(
+                              text: 'methodology.identify_problem'.tr(),
+                              textAlign: TextAlign.center,
+                              textStyle: KaloTheme.textStyle,
+                              fontWeight: FontWeight.w600,
+                              color: KaloTheme.blueColor,
+                              webFontSize: 29,
+                              tabletFontSize: 12,
+                              mobileFontSize: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        bottom: crewYPos,
+                        left: crewXPos,
+                        // width: width / 4,
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              KaloIcons.crewLogo,
+                              height: imageSize,
+                              width: 90,
+                            ),
+                            const Spacing(
+                              direction: SpacingDirection.horizontal,
+                              web: 29,
+                              tablet: 16,
+                              mobile: 14,
+                            ),
+                            ScaleText(
+                              text: 'methodology.build_your_tech_team'.tr(),
+                              textAlign: TextAlign.center,
+                              textStyle: KaloTheme.textStyle,
+                              fontWeight: FontWeight.w600,
+                              color: KaloTheme.blueColor,
+                              webFontSize: 29,
+                              tabletFontSize: 12,
+                              mobileFontSize: 10,
+                            ),
+                          ],
+                        ),
+                      ),
+                      Positioned(
+                        bottom: rocketYPos,
+                        left: rocketXPos,
+                        child: Column(
+                          children: <Widget>[
+                            Image.asset(
+                              KaloIcons.rocketLogo,
+                              height: imageSize,
+                              width: imageSize,
+                            ),
+                            const Spacing(
+                              direction: SpacingDirection.horizontal,
+                              web: 29,
+                              tablet: 16,
+                              mobile: 14,
+                            ),
+                            ScaleText(
+                              text: 'methodology.start_the_proyect'.tr(),
+                              textAlign: TextAlign.center,
+                              textStyle: KaloTheme.textStyle,
+                              fontWeight: FontWeight.w600,
+                              color: KaloTheme.blueColor,
+                              webFontSize: 29,
+                              tabletFontSize: 12,
+                              mobileFontSize: 10,
+                            ),
+                          ],
+                        ),
                       ),
                     ],
-                  ),
-                ),
+                  );
+                },
               ),
-              const Positioned(
-                right: -250,
-                top: -200,
-                height: 300,
-                width: 300,
-                child: DecoratedBox(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    boxShadow: <BoxShadow>[
-                      BoxShadow(
-                        color: KaloTheme.primaryColor,
-                        blurRadius: 300,
-                        spreadRadius: 20,
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 280,
-                top: -30,
-                child: Column(
-                  children: <Widget>[
-                    Image.asset(
-                      KaloIcons.searchLogo,
-                      height: imageSize,
-                      width: imageSize,
-                    ),
-                    const SizedBox(height: 22),
-                    Text(
-                      'methodology.identify_problem'.tr(),
-                      textAlign: TextAlign.center,
-                      style: KaloTheme.textStyle.copyWith(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
-                        color: KaloTheme.blueColor,
-                      ),
+            ),
+            const ScaleSizedBox(
+              heightTablet: 200,
+              heightWeb: 300,
+              heightMobile: 100,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Color.fromARGB(91, 46, 154, 255),
+                      blurRadius: 500,
+                      spreadRadius: 80,
+                      offset: Offset(-35, 3),
                     ),
                   ],
                 ),
               ),
-              Positioned(
-                left: -15,
-                right: 0,
-                top: 40,
-                child: Column(
-                  children: <Widget>[
-                    Image.asset(
-                      KaloIcons.crewLogo,
-                      height: imageSize,
-                      width: 90,
-                    ),
-                    const SizedBox(height: 22),
-                    Text(
-                      'methodology.build_your_tech_team'.tr(),
-                      textAlign: TextAlign.center,
-                      style: KaloTheme.textStyle.copyWith(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
-                        color: KaloTheme.blueColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              Positioned(
-                right: 280,
-                top: -30,
-                child: Column(
-                  children: <Widget>[
-                    Image.asset(
-                      KaloIcons.rocketLogo,
-                      height: imageSize,
-                      width: imageSize,
-                    ),
-                    const SizedBox(height: 22),
-                    Text(
-                      'methodology.start_the_proyect'.tr(),
-                      textAlign: TextAlign.center,
-                      style: KaloTheme.textStyle.copyWith(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w600,
-                        color: KaloTheme.blueColor,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ],
-      );
+            ),
+          ],
+        ),
+      ],
+    );
+  }
 }

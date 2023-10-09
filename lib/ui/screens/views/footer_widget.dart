@@ -5,8 +5,7 @@ class FooterWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) => Container(
-        width: double.infinity,
-        padding: const EdgeInsets.only(top: 47, bottom: 100),
+        padding: const EdgeInsets.only(top: 100, bottom: 100),
         decoration: const BoxDecoration(
           gradient: LinearGradient(
             colors: <Color>[Color(0xFF0C0A3E), Color(0xff0442b3)],

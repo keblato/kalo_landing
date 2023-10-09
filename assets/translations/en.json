@@ -57,7 +57,7 @@
         "more_5000": "+5000",
         "developers_in_our_community": "Developers in our community"
     },
-    "trusted_in_us": "Companies\nthat trust us",
+    "trusted_in_us_path": "assets/images/trust_us_en.png",
     "identify_your_needs": {
         "not_sure_how_move_forward": "Not sure how to move forward?",
         "identify_your_needs": "We identify\nyour needs",

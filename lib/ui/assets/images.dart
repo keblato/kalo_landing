@@ -1,3 +1,5 @@
+import 'package:easy_localization/easy_localization.dart';
+
 class KaloImages {
   static const String girlWorry = 'assets/images/girl_worry.png';
   static const String methodologyWave = 'assets/images/methodology_wave.png';
@@ -21,4 +23,8 @@ class KaloImages {
   static const String carousel9 = 'assets/images/carousel_9.png';
   static const String carousel10 = 'assets/images/carousel_10.png';
   static const String carousel11 = 'assets/images/carousel_11.png';
+  static const String shadowMethology = 'assets/images/shadow_methology.png';
+  static const String mobilePortalUnderConstruction =
+      'assets/images/mobile_portal_under_construction.png';
+  static final String trustUs = tr('trusted_in_us_path');
 }
