@@ -19,9 +19,7 @@ class LandingScreen extends StatelessWidget {
       body: ListView(
         shrinkWrap: true,
         children: <Widget>[
-          HeaderWidget(
-            changeLanguage: (bool value) => changeLanguage(context, value),
-          ),
+          const HeaderWidget(),
           const PopularServices(),
           const DontWorryWidget(),
           const ServicesWidget(),
