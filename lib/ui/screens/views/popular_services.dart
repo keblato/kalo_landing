@@ -1,6 +1,6 @@
 part of com.kalo.landing.views;
 
-const double itemCarrouselWidth = 200;
+const double itemCarrouselWidth = 201;
 
 class PopularServices extends StatefulWidget {
   const PopularServices({super.key});
