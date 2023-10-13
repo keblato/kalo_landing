@@ -2,16 +2,13 @@ part of com.kalo.landing.views;
 
 class HeaderWidget extends StatefulWidget {
   const HeaderWidget({
-    required this.changeLanguage,
     super.key,
   });
-  final void Function(bool value) changeLanguage;
   @override
   State<HeaderWidget> createState() => _HeaderWidgetState();
 }
 
 class _HeaderWidgetState extends State<HeaderWidget> {
-  bool switchVal = false;
   late VideoPlayerController _controller;
   bool isLoading = true;
   double videoContainerRatio = 2;
@@ -130,20 +127,6 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                                     tabletFontSize: 16,
                                   ),
                                 ),
-                              ),
-                              Row(
-                                children: <Widget>[
-                                  const Icon(Icons.translate),
-                                  Switch(
-                                    value: switchVal,
-                                    activeColor: Colors.red,
-                                    onChanged: (bool value) {
-                                      widget.changeLanguage(value);
-                                      switchVal = value;
-                                      setState(() {});
-                                    },
-                                  ),
-                                ],
                               ),
                             ],
                           ),
