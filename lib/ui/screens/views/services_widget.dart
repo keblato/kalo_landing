@@ -35,7 +35,7 @@ class ServicesWidget extends StatelessWidget {
                     child: _ImageInfo(
                       imgPath: KaloImages.features1,
                       title: 'services.build_teams'.tr(),
-                      showSeeMore: true,
+                      showSeeMore: false,
                     ),
                   ),
                 ),
@@ -75,7 +75,7 @@ class ServicesWidget extends StatelessWidget {
                   child: _ImageInfo(
                     imgPath: KaloImages.features1,
                     title: 'services.build_teams'.tr(),
-                    showSeeMore: true,
+                    showSeeMore: false,
                   ),
                 ),
                 const SizedBox(width: 20),

@@ -195,7 +195,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                       ),
                       ScaleText(
                         text: 'header.description'.tr(),
-                        textStyle: KaloTheme.textStyle,
+                        textStyle: KaloTheme.acuminTextStyle,
                         color: Colors.white,
                         webFontSize: 24,
                         tabletFontSize: 14,
@@ -214,7 +214,11 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                             : MainAxisAlignment.start,
                         children: <Widget>[
                           ElevatedButton(
-                            onPressed: () {},
+                            onPressed: () async {
+                              Uri url = Uri.parse(
+                                  'https://airtable.com/appnVS7bLlG8V3Jld/shrCZ7RHhZQdshXtx');
+                              await launchUrl(url);
+                            },
                             style: ElevatedButton.styleFrom(
                               padding: const EdgeInsets.symmetric(
                                 horizontal: 20,
@@ -242,14 +246,22 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                               tablet: 37,
                               web: 37,
                             ),
-                          ScaleText(
-                            text: 'header.be_developer'.tr(),
-                            textStyle: KaloTheme.acuminTextStyle,
-                            color: Colors.white,
-                            fontWeight: FontWeight.w700,
-                            webFontSize: 15,
-                            tabletFontSize: 8.7,
-                            mobileFontSize: 13.5,
+                          GestureDetector(
+                            onTap: () async {
+                              Uri url = Uri.parse(
+                                'https://airtable.com/appnVS7bLlG8V3Jld/shrviMElKcQTClgKX',
+                              );
+                              await launchUrl(url);
+                            },
+                            child: ScaleText(
+                              text: 'header.be_developer'.tr(),
+                              textStyle: KaloTheme.acuminTextStyle,
+                              color: Colors.white,
+                              fontWeight: FontWeight.w700,
+                              webFontSize: 15,
+                              tabletFontSize: 8.7,
+                              mobileFontSize: 13.5,
+                            ),
                           ),
                         ],
                       ),

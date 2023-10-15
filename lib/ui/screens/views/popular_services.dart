@@ -16,45 +16,50 @@ class _PopularServicesState extends State<PopularServices> {
   Widget build(BuildContext context) {
     double lateralPadding = MediaQuery.of(context).size.width * 0.1;
 
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: lateralPadding),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          ScaleText(
-            text: 'popular_services.popular_services'.tr(),
-            textStyle: KaloTheme.textStyle.copyWith(),
-            webFontSize: 36,
-            tabletFontSize: 18,
-            mobileFontSize: 24,
-            fontWeight: FontWeight.w700,
-            color: KaloTheme.primaryColor,
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: <Widget>[
+        Padding(
+          padding: EdgeInsets.symmetric(horizontal: lateralPadding),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              ScaleText(
+                text: 'popular_services.popular_services'.tr(),
+                textStyle: KaloTheme.textStyle.copyWith(),
+                webFontSize: 36,
+                tabletFontSize: 18,
+                mobileFontSize: 24,
+                fontWeight: FontWeight.w700,
+                color: KaloTheme.primaryColor,
+              ),
+              const SizedBox(height: 8),
+              ScaleText(
+                text: 'popular_services.you_need_we_made'.tr(),
+                textStyle: KaloTheme.acuminTextStyle,
+                webFontSize: 24,
+                tabletFontSize: 12,
+                mobileFontSize: 16,
+              ),
+              const Spacing(
+                direction: SpacingDirection.vertical,
+                web: 46,
+                tablet: 34,
+                mobile: 19,
+              ),
+            ],
           ),
-          const SizedBox(height: 8),
-          ScaleText(
-            text: 'popular_services.you_need_we_made'.tr(),
-            textStyle: KaloTheme.acuminTextStyle,
-            webFontSize: 24,
-            tabletFontSize: 12,
-            mobileFontSize: 16,
+        ),
+        ScaleSizedBox(
+          heightWeb: 370,
+          heightTablet: 200,
+          heightMobile: 280,
+          child: PopularServiceCarousel(
+            numOfCards: 3,
+            scrollController: scrollController,
           ),
-          const Spacing(
-            direction: SpacingDirection.vertical,
-            web: 46,
-            tablet: 34,
-            mobile: 19,
-          ),
-          ScaleSizedBox(
-            heightWeb: 370,
-            heightTablet: 200,
-            heightMobile: 280,
-            child: PopularServiceCarousel(
-              numOfCards: 3,
-              scrollController: scrollController,
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
