@@ -127,40 +127,48 @@ class IdentifyYourNeeds extends StatelessWidget {
                         fit: BoxFit.fitHeight,
                       ),
                     ),
-                    DecoratedBox(
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(10),
-                        gradient: const LinearGradient(
-                          colors: <Color>[
-                            Color(0xFF0323E5),
-                            Color(0xFF15ABFF),
-                          ],
-                          stops: <double>[0, 1],
-                          begin: Alignment.topCenter,
-                          end: Alignment.bottomCenter,
+                    GestureDetector(
+                      onTap: () async {
+                        Uri url = Uri.parse(
+                          'https://calendly.com/kalomeetings/kalo-meetings-room',
+                        );
+                        await launchUrl(url);
+                      },
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: const LinearGradient(
+                            colors: <Color>[
+                              Color(0xFF0323E5),
+                              Color(0xFF15ABFF),
+                            ],
+                            stops: <double>[0, 1],
+                            begin: Alignment.topCenter,
+                            end: Alignment.bottomCenter,
+                          ),
                         ),
-                      ),
-                      child: ScalePadding(
-                        paddingWeb: const EdgeInsets.symmetric(
-                          vertical: 18,
-                          horizontal: 26,
-                        ),
-                        paddingTablet: const EdgeInsets.symmetric(
-                          vertical: 9,
-                          horizontal: 12,
-                        ),
-                        paddingMobile: const EdgeInsets.symmetric(
-                          vertical: 8,
-                          horizontal: 12,
-                        ),
-                        child: ScaleText(
-                          text: 'identify_your_needs.book_now'.tr(),
-                          textStyle: KaloTheme.textStyle,
-                          webFontSize: 30,
-                          tabletFontSize: 14,
-                          mobileFontSize: 13,
-                          fontWeight: FontWeight.w600,
-                          color: Colors.white,
+                        child: ScalePadding(
+                          paddingWeb: const EdgeInsets.symmetric(
+                            vertical: 18,
+                            horizontal: 26,
+                          ),
+                          paddingTablet: const EdgeInsets.symmetric(
+                            vertical: 9,
+                            horizontal: 12,
+                          ),
+                          paddingMobile: const EdgeInsets.symmetric(
+                            vertical: 8,
+                            horizontal: 12,
+                          ),
+                          child: ScaleText(
+                            text: 'identify_your_needs.book_now'.tr(),
+                            textStyle: KaloTheme.textStyle,
+                            webFontSize: 30,
+                            tabletFontSize: 14,
+                            mobileFontSize: 13,
+                            fontWeight: FontWeight.w600,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
