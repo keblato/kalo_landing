@@ -47,10 +47,6 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
 
     return Column(
       children: <Widget>[
-        const Spacing(
-          direction: SpacingDirection.vertical,
-          mobile: 50,
-        ),
         if (isMobile) ...<Widget>[
           const _DevelopersTitle(),
           const Spacing(
@@ -141,7 +137,6 @@ class _DevelopersTitle extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
-            const SizedBox(height: 80),
             ScaleText(
               text: 'developers.more_5000'.tr(),
               textStyle: KaloTheme.textStyle.copyWith(),

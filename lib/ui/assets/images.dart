@@ -27,4 +27,7 @@ class KaloImages {
   static const String mobilePortalUnderConstruction =
       'assets/images/mobile_portal_under_construction.png';
   static final String trustUs = tr('trusted_in_us_path');
+  static final String methodologyMobile = tr('methodology.methodology_mobile');
+  static final String methodologyTablet = tr('methodology.methodology_tablet');
+  static final String methodologyWeb = tr('methodology.methodology_web');
 }

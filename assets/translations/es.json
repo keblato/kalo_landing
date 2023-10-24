@@ -51,7 +51,10 @@
         "description": "Nuestro proceso de elaboración de proyectos está \nestructurado de modo en que no te tengas que preocupar",
         "identify_problem": "Identificamos\nel problema",
         "build_your_tech_team": "Armamos tu\nequipo tech",
-        "start_the_proyect": "¡¡Inicia el \nproyecto!!"
+        "start_the_proyect": "¡¡Inicia el \nproyecto!!",
+        "methodology_tablet": "assets/images/neustroproceso_tablet_es.png",
+        "methodology_mobile": "assets/images/neustroproceso_mobile_es.png",
+        "methodology_web": "assets/images/neustroproceso_web_es.png"
     },
     "developers": {
         "more_5000": "+5000",

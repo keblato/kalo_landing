@@ -51,7 +51,10 @@
         "description": "Our project preparation process is structured so that you don't have to worry",
         "identify_problem": "Identify the\nproblem",
         "build_your_tech_team": "Buld a dev\nteam",
-        "start_the_proyect": "¡¡Start \nworking!!"
+        "start_the_proyect": "¡¡Start \nworking!!",
+        "methodology_tablet": "assets/images/neustroproceso_tablet_en.png",
+        "methodology_mobile": "assets/images/neustroproceso_mobile_en.png",
+        "methodology_web": "assets/images/neustroproceso_web_en.png"
     },
     "developers": {
         "more_5000": "+5000",
