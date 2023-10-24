@@ -15,12 +15,12 @@ class IdentifyYourNeeds extends StatelessWidget {
       child: Stack(
         clipBehavior: Clip.none,
         children: <Widget>[
-          const Positioned(
+          Positioned(
             right: -50,
-            top: 100,
+            top: isMobile ? -100 : 100,
             height: 300,
-            width: 300,
-            child: DecoratedBox(
+            width: isMobile ? 100 : 300,
+            child: const DecoratedBox(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 boxShadow: <BoxShadow>[
@@ -33,24 +33,25 @@ class IdentifyYourNeeds extends StatelessWidget {
               ),
             ),
           ),
-          const Positioned(
-            left: -250,
-            top: 0,
-            height: 300,
-            width: 300,
-            child: DecoratedBox(
-              decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                boxShadow: <BoxShadow>[
-                  BoxShadow(
-                    color: Color.fromARGB(91, 46, 154, 255),
-                    blurRadius: 500,
-                    spreadRadius: 80,
-                  ),
-                ],
+          if (!isMobile)
+            const Positioned(
+              left: -250,
+              top: 0,
+              height: 300,
+              width: 300,
+              child: DecoratedBox(
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  boxShadow: <BoxShadow>[
+                    BoxShadow(
+                      color: Color.fromARGB(91, 46, 154, 255),
+                      blurRadius: 500,
+                      spreadRadius: 80,
+                    ),
+                  ],
+                ),
               ),
             ),
-          ),
           Center(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
