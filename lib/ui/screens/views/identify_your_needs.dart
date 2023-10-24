@@ -130,7 +130,7 @@ class IdentifyYourNeeds extends StatelessWidget {
                     GestureDetector(
                       onTap: () async {
                         Uri url = Uri.parse(
-                          'https://calendly.com/kalomeetings/kalo-meetings-room',
+                          scheduleLink,
                         );
                         await launchUrl(url);
                       },

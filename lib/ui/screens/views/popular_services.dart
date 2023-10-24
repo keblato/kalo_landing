@@ -140,7 +140,7 @@ class _PopularServiceCarouselState extends State<PopularServiceCarousel> {
                     ? scrollController.offset + 300
                     : scrollController.position.maxScrollExtent,
                 duration: const Duration(milliseconds: 200),
-                curve: Curves.slowMiddle,
+                curve: Curves.linear,
               );
             },
             child: const Icon(

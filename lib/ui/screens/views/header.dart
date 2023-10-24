@@ -172,7 +172,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                     children: <Widget>[
                       const Spacing(
                         direction: SpacingDirection.vertical,
-                        mobile: 156,
+                        mobile: 130,
                         tablet: 64,
                         web: 110,
                       ),
@@ -204,7 +204,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                       ),
                       const Spacing(
                         direction: SpacingDirection.vertical,
-                        mobile: 230,
+                        mobile: 155,
                         tablet: 47,
                         web: 81,
                       ),
@@ -216,7 +216,8 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                           ElevatedButton(
                             onPressed: () async {
                               Uri url = Uri.parse(
-                                  'https://airtable.com/appnVS7bLlG8V3Jld/shrCZ7RHhZQdshXtx');
+                                contractNowLink,
+                              );
                               await launchUrl(url);
                             },
                             style: ElevatedButton.styleFrom(
@@ -249,7 +250,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                           GestureDetector(
                             onTap: () async {
                               Uri url = Uri.parse(
-                                'https://airtable.com/appnVS7bLlG8V3Jld/shrviMElKcQTClgKX',
+                                beDeveloperLink,
                               );
                               await launchUrl(url);
                             },

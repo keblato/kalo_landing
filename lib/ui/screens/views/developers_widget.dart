@@ -49,7 +49,7 @@ class _DevelopersWidgetState extends State<DevelopersWidget> {
       children: <Widget>[
         const Spacing(
           direction: SpacingDirection.vertical,
-          mobile: 115,
+          mobile: 50,
         ),
         if (isMobile) ...<Widget>[
           const _DevelopersTitle(),

@@ -1,3 +1,3 @@
 class KaloSvg {
-  static const String example = 'assets/svg/example.svg';
+  static const String methodologyWave = 'assets/svg/methodology_wave.svg';
 }
