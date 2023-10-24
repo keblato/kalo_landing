@@ -14,7 +14,7 @@ class DontWorryWidget extends StatelessWidget {
         const Spacing(
           web: 120,
           tablet: 80,
-          mobile: 0,
+          mobile: 50,
           direction: SpacingDirection.vertical,
         ),
         if (isMobile)
@@ -70,9 +70,7 @@ class DontWorryWidget extends StatelessWidget {
                 child: Column(
                   children: <Widget>[
                     Row(
-                      crossAxisAlignment: isMobile
-                          ? CrossAxisAlignment.center
-                          : CrossAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.center,
                       children: <Widget>[
                         const ScaleImage(
                           path: KaloImages.girlWorry,
@@ -176,7 +174,8 @@ class DontWorryWidget extends StatelessWidget {
                               widthTablet: 457,
                               widthMobile: 457,
                               child: Column(
-                                mainAxisAlignment: MainAxisAlignment.start,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
                                   Flexible(
                                     child: ScaleText(

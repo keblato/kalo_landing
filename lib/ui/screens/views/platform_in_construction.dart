@@ -8,94 +8,90 @@ class PlatformInConstruction extends StatelessWidget {
     double lateralPadding = MediaQuery.of(context).size.width * 0.1;
     bool isMobile = MediaQuery.of(context).isMobile;
 
-    return ScaleSizedBox(
-      heightWeb: 800,
-      child: ScalePadding(
-        paddingWeb: EdgeInsets.only(top: 200, left: lateralPadding),
-        paddingTablet: const EdgeInsets.only(top: 150),
-        paddingMobile: const EdgeInsets.only(top: 80),
-        child: isMobile
-            ? SizedBox(
-                height: 680,
-                child: Stack(
-                  children: <Widget>[
-                    Image.asset(
-                      KaloImages.mobilePortalUnderConstruction,
-                      width: MediaQuery.of(context).size.width,
-                      fit: BoxFit.fitWidth,
-                    ),
-                    Column(
-                      children: <Widget>[
-                        const Spacing(
-                          mobile: 300,
-                          direction: SpacingDirection.vertical,
+    return ScalePadding(
+      paddingWeb: EdgeInsets.only(top: 200, left: lateralPadding),
+      paddingTablet: const EdgeInsets.only(top: 150),
+      paddingMobile: const EdgeInsets.only(top: 80),
+      child: isMobile
+          ? SizedBox(
+              height: 680,
+              child: Stack(
+                children: <Widget>[
+                  Image.asset(
+                    KaloImages.mobilePortalUnderConstruction,
+                    width: MediaQuery.of(context).size.width,
+                    fit: BoxFit.fitWidth,
+                  ),
+                  Column(
+                    children: <Widget>[
+                      const Spacing(
+                        mobile: 300,
+                        direction: SpacingDirection.vertical,
+                      ),
+                      ScaleText(
+                        text:
+                            'platform_in_construction.title'.tr().toUpperCase(),
+                        textStyle: KaloTheme.textStyle,
+                        webFontSize: 56,
+                        tabletFontSize: 18,
+                        mobileFontSize: 24,
+                        fontWeight: FontWeight.bold,
+                        color: Colors.white,
+                      ),
+                      const SizedBox(height: 10),
+                      Padding(
+                        padding: EdgeInsets.symmetric(
+                          horizontal: MediaQuery.of(context).size.width * 0.2,
                         ),
-                        ScaleText(
-                          text: 'platform_in_construction.title'
-                              .tr()
-                              .toUpperCase(),
+                        child: ScaleText(
+                          text: 'platform_in_construction.follow_us'.tr(),
                           textStyle: KaloTheme.textStyle,
-                          webFontSize: 56,
-                          tabletFontSize: 18,
-                          mobileFontSize: 24,
-                          fontWeight: FontWeight.bold,
+                          webFontSize: 27,
+                          tabletFontSize: 12,
+                          mobileFontSize: 16,
+                          fontWeight: FontWeight.w500,
                           color: Colors.white,
+                          textAlign: TextAlign.center,
                         ),
-                        const SizedBox(height: 10),
-                        Padding(
-                          padding: EdgeInsets.symmetric(
-                            horizontal: MediaQuery.of(context).size.width * 0.2,
-                          ),
-                          child: ScaleText(
-                            text: 'platform_in_construction.follow_us'.tr(),
-                            textStyle: KaloTheme.textStyle,
-                            webFontSize: 27,
-                            tabletFontSize: 12,
-                            mobileFontSize: 16,
-                            fontWeight: FontWeight.w500,
-                            color: Colors.white,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                        const Spacing(
-                          mobile: 70,
-                          direction: SpacingDirection.vertical,
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            ...SocialNetworksEnum.values.map(
-                              (SocialNetworksEnum socialNetwork) => Padding(
-                                padding: const EdgeInsets.only(bottom: 17),
-                                child: Row(
-                                  children: <Widget>[
-                                    Image.asset(socialNetwork.image, width: 22),
-                                    const SizedBox(width: 4),
-                                    ScaleText(
-                                      text: socialNetwork.title,
-                                      textStyle: KaloTheme.textStyle,
-                                      webFontSize: 26,
-                                      tabletFontSize: 12,
-                                      mobileFontSize: 11,
-                                      color: Colors.white,
-                                    ),
-                                    const Spacing(
-                                      mobile: 13,
-                                      direction: SpacingDirection.horizontal,
-                                    ),
-                                  ],
-                                ),
+                      ),
+                      const Spacing(
+                        mobile: 70,
+                        direction: SpacingDirection.vertical,
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          ...SocialNetworksEnum.values.map(
+                            (SocialNetworksEnum socialNetwork) => Padding(
+                              padding: const EdgeInsets.only(bottom: 17),
+                              child: Row(
+                                children: <Widget>[
+                                  Image.asset(socialNetwork.image, width: 22),
+                                  const SizedBox(width: 4),
+                                  ScaleText(
+                                    text: socialNetwork.title,
+                                    textStyle: KaloTheme.textStyle,
+                                    webFontSize: 26,
+                                    tabletFontSize: 12,
+                                    mobileFontSize: 11,
+                                    color: Colors.white,
+                                  ),
+                                  const Spacing(
+                                    mobile: 13,
+                                    direction: SpacingDirection.horizontal,
+                                  ),
+                                ],
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              )
-            : const _WebTabletPlatformUnderConstruction(),
-      ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+            )
+          : const _WebTabletPlatformUnderConstruction(),
     );
   }
 }
@@ -104,18 +100,16 @@ class _WebTabletPlatformUnderConstruction extends StatelessWidget {
   const _WebTabletPlatformUnderConstruction();
 
   @override
-  Widget build(BuildContext context) => Stack(
+  Widget build(BuildContext context) => Row(
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
-          Positioned(
+          Expanded(
             child: Image.asset(
               KaloImages.kaloDashboard,
-              width: MediaQuery.of(context).size.width * .6,
               fit: BoxFit.fitWidth,
             ),
           ),
-          Positioned(
-            left: MediaQuery.of(context).size.width * .48,
-            width: MediaQuery.of(context).size.width * 0.4,
+          Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[

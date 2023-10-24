@@ -9,6 +9,12 @@ class MethodologyWidget extends StatelessWidget {
     bool isTablet = MediaQuery.of(context).isTablet;
     return Column(
       children: <Widget>[
+        const Spacing(
+          direction: SpacingDirection.vertical,
+          web: 140,
+          tablet: 100,
+          mobile: 17,
+        ),
         ScaleText(
           text: 'methodology.title'.tr(),
           textStyle: KaloTheme.textStyle,
@@ -201,7 +207,7 @@ class MethodologyWidget extends StatelessWidget {
             const ScaleSizedBox(
               heightTablet: 200,
               heightWeb: 300,
-              heightMobile: 100,
+              heightMobile: 50,
               child: DecoratedBox(
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,

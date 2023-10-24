@@ -12,8 +12,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(),
         localizationsDelegates: context.localizationDelegates,
         supportedLocales: context.supportedLocales,
-        // TODO(Kevin): change to use the same language of browser
-        //   locale: context.locale,
         locale: context.locale,
         home: const LandingScreen(),
       );

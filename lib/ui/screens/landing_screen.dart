@@ -23,7 +23,6 @@ class LandingScreen extends StatelessWidget {
           const PopularServices(),
           const DontWorryWidget(),
           const ServicesWidget(),
-          const SizedBox(height: 130),
           const MethodologyWidget(),
           const DevelopersWidget(key: Key('developers_widget')),
           const TrustedInUs(),

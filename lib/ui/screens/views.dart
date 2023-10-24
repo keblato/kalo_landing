@@ -4,15 +4,13 @@ import 'dart:async';
 
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:simple_rich_text/simple_rich_text.dart';
+import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:video_player/video_player.dart';
 import '../../core/extensions_methods.dart';
 import '../../enums/enums.dart';
 import '../assets/icons.dart';
 import '../assets/images.dart';
-import '../assets/svg.dart';
 import '../assets/videos.dart';
 import '../theme.dart';
 import '../widgets/widgets.dart';
