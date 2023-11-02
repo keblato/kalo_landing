@@ -71,12 +71,8 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           //   const Center(
           //     child: CircularProgressIndicator(),
           //   ),
-
           //  SvgPicture.asset(KaloSvg.example, semanticsLabel: 'Acme Logo'),
-          Image.asset(
-            KaloImages.header,
-            fit: BoxFit.cover,
-          ),
+
           DecoratedBox(
             decoration: BoxDecoration(
               image: DecorationImage(
