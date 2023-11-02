@@ -20,18 +20,18 @@
         "popular_services": "Servicios populares",
         "you_need_we_made": "¡Tú lo necesitas, nosotros lo hacemos!",
         "carousel": {
-            "carousel0": "Sitios\n*WEB*",
-            "carousel1": "Bases de\nDATOS",
-            "carousel2": "Software\nA MEDIDA",
-            "carousel3": "commerce\nPERSONALIZADOS",
-            "carousel4": "Aplicaciones\nMÓVILES",
-            "carousel5": "Integración\nDE SISTEMAS",
-            "carousel6": "Consultorías\nTECNOLÓGICAS",
-            "carousel7": "Servicios en\nNUBE",
-            "carousel8": "Prototipados\nFRONT-END",
-            "carousel9": "Mantenimiento\nDE PÁGINAS",
-            "carousel10": "Diseño\nUI/UX",
-            "carouse11": "Desarrollo\nDE MVP'S"
+            "carousel0": "*Sitios*\nWEB",
+            "carousel1": "*Bases de*\nDATOS",
+            "carousel2": "*Software*\nA MEDIDA",
+            "carousel3": "*commerce*\nPERSONALIZADOS",
+            "carousel4": "*Aplicaciones*\nMÓVILES",
+            "carousel5": "*Integración*\nDE SISTEMAS",
+            "carousel6": "*Consultorías*\nTECNOLÓGICAS",
+            "carousel7": "*Servicios en*\nNUBE",
+            "carousel8": "*Prototipados*\nFRONT-END",
+            "carousel9": "*Mantenimiento*\nDE PÁGINAS",
+            "carousel10": "*Diseño*\nUI/UX",
+            "carouse11": "*Desarrollo*\nDE MVP'S"
         }
     },
     "dont_worry": {

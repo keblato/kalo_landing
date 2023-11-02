@@ -73,8 +73,19 @@ class _HeaderWidgetState extends State<HeaderWidget> {
           //   ),
 
           //  SvgPicture.asset(KaloSvg.example, semanticsLabel: 'Acme Logo'),
-          ColoredBox(
-            color: const Color.fromRGBO(0, 32, 181, 1),
+          Image.asset(
+            KaloImages.header,
+            fit: BoxFit.cover,
+          ),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: Image.asset(
+                  KaloImages.header,
+                ).image,
+                fit: BoxFit.cover,
+              ),
+            ),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
