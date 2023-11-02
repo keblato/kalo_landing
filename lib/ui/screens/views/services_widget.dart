@@ -40,14 +40,15 @@ class ServicesWidget extends StatelessWidget {
             )
           else
             SizedBox(
-              height: height,
+              height: height + 10,
               child: MasonryGridView.count(
+                physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
-                mainAxisSpacing: 4,
-                crossAxisSpacing: 4,
+                mainAxisSpacing: 10,
+                crossAxisSpacing: 10,
                 itemCount: 3,
                 itemBuilder: (BuildContext context, int index) => SizedBox(
-                  height: index == 0 ? height : height / 2,
+                  height: index == 0 ? height : (height / 2) - 5,
                   child: _ImageInfo(
                     image: ServicesCardEnum.values[index].image,
                     title: ServicesCardEnum.values[index].title.tr(),
@@ -104,7 +105,7 @@ class _ImageInfo extends StatelessWidget {
                   textStyle: KaloTheme.textStyle.copyWith(),
                   webFontSize: showSeeMore ? 41 : 26,
                   tabletFontSize: showSeeMore ? 16 : 10,
-                  mobileFontSize: showSeeMore ? 21 : 19,
+                  mobileFontSize: showSeeMore ? 21 : 16,
                   fontWeight: FontWeight.bold,
                   color: Colors.white,
                 ),
