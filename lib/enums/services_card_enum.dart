@@ -9,12 +9,12 @@ enum ServicesCardEnum {
   feature2(
     image: KaloImages.features2,
     title: 'services.project_manager_keeps_you_informed',
-    height: 200,
+    height: 180,
   ),
   feature3(
     image: KaloImages.features3,
     title: 'services.guarantees_you_deserve',
-    height: 150,
+    height: 140,
   );
 
   const ServicesCardEnum({

@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 
 class KaloImages {
+  static const String header = 'assets/images/header.png';
   static const String girlWorry = 'assets/images/girl_worry.png';
   static const String methodologyWave = 'assets/images/methodology_wave.png';
   static const String phone = 'assets/images/phone.png';
