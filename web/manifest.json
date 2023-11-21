@@ -1,11 +1,11 @@
 {
-    "name": "kalo_landing",
-    "short_name": "kalo_landing",
+    "name": "Kalo",
+    "short_name": "Kalo",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",
     "theme_color": "#0175C2",
-    "description": "A new Flutter project.",
+    "description": "Managed freelance tech & design teams",
     "orientation": "portrait-primary",
     "prefer_related_applications": false,
     "icons": [
